@@ -1,0 +1,35 @@
+{% include base_path %}
+<div class="pub-row{% if post.featured %} pub-featured{% endif %}">
+  {% if post.featured and post.banner %}
+  {% if post.paperurl %}<a class="pub-banner" href="{{ post.paperurl }}">{% else %}<div class="pub-banner">{% endif %}
+    <img src="{{ post.banner | prepend: base_path }}" alt="{{ post.title }} teaser">
+  {% if post.paperurl %}</a>{% else %}</div>{% endif %}
+  {% endif %}
+  <div class="pub-main">
+  <div class="pub-thumb">
+    {% if post.video %}
+      <video autoplay muted loop playsinline poster="{{ post.image | default: '/images/pub/placeholder.svg' | prepend: base_path }}">
+        <source src="{{ post.video | prepend: base_path }}" type="video/mp4">
+      </video>
+    {% else %}
+      <img src="{{ post.image | default: '/images/pub/placeholder.svg' | prepend: base_path }}"
+           alt="{{ post.title }}"
+           onerror="this.onerror=null;this.src='{{ '/images/pub/placeholder.svg' | prepend: base_path }}';">
+    {% endif %}
+  </div>
+  <div class="pub-info">
+    <div class="pub-title">
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}
+    </div>
+    {% if post.authors %}<div class="pub-authors">{{ post.authors }}</div>{% endif %}
+    <div class="pub-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</div>
+    <div class="pub-links">
+      {% if post.paperurl %}<a href="{{ post.paperurl }}">{% if post.paperurl contains 'arxiv' %}arXiv{% else %}Paper{% endif %}</a>{% endif %}
+      {% if post.project %}<a href="{{ post.project }}">Project</a>{% endif %}
+      {% if post.code %}<a href="{{ post.code }}">Code</a>{% endif %}
+      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+      {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">Bibtex</a>{% endif %}
+    </div>
+  </div>
+  </div>
+</div>
