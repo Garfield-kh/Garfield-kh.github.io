@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Kehong Gong"
+title                    : "Gong Kehong"
 title_separator          : "-"
-name                     : &name "Kehong Gong"
+name                     : &name "Gong Kehong"
 description              : &description "Kehong Gong. Research on generative AI for video and motion, foundation models, and efficient deep learning."
 url                      : https://garfield-kh.github.io
 baseurl                  : ""
@@ -23,7 +23,7 @@ repository               : "Garfield-kh/Garfield-kh.github.io"
 author:
   # Biographic information
   avatar           : "profile-grad.jpg"
-  name             : "Kehong Gong"
+  name             : "Gong Kehong"
   pronouns         : # example: "she/her"
   bio              : "Senior Staff Engineer at Huawei. Ph.D., NUS. Generative AI for video & motion; foundation models and efficient deep learning."
   location         : "Singapore"
