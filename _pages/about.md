@@ -59,8 +59,15 @@ html{scroll-padding-top:70px;}
 .pub-title a{color:#1a1a1a;}
 .pub-authors{font-size:.92em;margin-bottom:.1em;}
 .pub-venue{font-size:.9em;color:#777;font-style:italic;margin-bottom:.4em;}
-.pub-links a{display:inline-block;font-size:.8em;padding:.12em .6em;margin:0 .35em .2em 0;border:1px solid #cfd3d8;border-radius:12px;color:#2f7f93;text-decoration:none;}
-.pub-links a:hover{background:#2f7f93;color:#fff;text-decoration:none;}
+.pub-links a{display:inline-flex;align-items:center;gap:.4em;font-size:.8em;padding:.14em .65em;margin:0 .35em .3em 0;border:1px solid var(--c,#2f7f93);border-radius:12px;color:var(--c,#2f7f93);text-decoration:none;transition:background .15s,color .15s;}
+.pub-links a:hover{background:var(--c,#2f7f93);color:#fff;text-decoration:none;}
+.pub-links a i{font-size:.95em;line-height:1;}
+.pub-link-paper{--c:#b31b1b;}
+.pub-link-project{--c:#2f7f93;}
+.pub-link-demo{--c:#d97706;}
+.pub-link-code{--c:#333;}
+.pub-link-slides{--c:#7c3aed;}
+.pub-link-bibtex{--c:#557;}
 @media (max-width:600px){.pub-main{flex-direction:column;}.pub-thumb,.pub-thumb img,.pub-thumb video{width:100%;flex-basis:auto;}}
 </style>
 

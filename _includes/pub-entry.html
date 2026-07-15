@@ -24,12 +24,12 @@
     {% if post.authors %}<div class="pub-authors">{{ post.authors }}</div>{% endif %}
     <div class="pub-venue">{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</div>
     <div class="pub-links">
-      {% if post.paperurl %}<a href="{{ post.paperurl }}">{% if post.paperurl contains 'arxiv' %}arXiv{% else %}Paper{% endif %}</a>{% endif %}
-      {% if post.project %}<a href="{{ post.project }}">Project</a>{% endif %}
-      {% if post.demo %}<a href="{{ post.demo }}">Demo</a>{% endif %}
-      {% if post.code %}<a href="{{ post.code }}">Code</a>{% endif %}
-      {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
-      {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">Bibtex</a>{% endif %}
+      {% if post.paperurl %}<a class="pub-link-paper" href="{{ post.paperurl }}">{% if post.paperurl contains 'arxiv' %}<i class="ai ai-arxiv" aria-hidden="true"></i>arXiv{% else %}<i class="fas fa-file-lines" aria-hidden="true"></i>Paper{% endif %}</a>{% endif %}
+      {% if post.project %}<a class="pub-link-project" href="{{ post.project }}"><i class="fas fa-globe" aria-hidden="true"></i>Project</a>{% endif %}
+      {% if post.demo %}<a class="pub-link-demo" href="{{ post.demo }}"><i class="fas fa-play" aria-hidden="true"></i>Demo</a>{% endif %}
+      {% if post.code %}<a class="pub-link-code" href="{{ post.code }}"><i class="fab fa-github" aria-hidden="true"></i>Code</a>{% endif %}
+      {% if post.slidesurl %}<a class="pub-link-slides" href="{{ post.slidesurl }}"><i class="fas fa-person-chalkboard" aria-hidden="true"></i>Slides</a>{% endif %}
+      {% if post.bibtexurl %}<a class="pub-link-bibtex" href="{{ post.bibtexurl }}"><i class="fas fa-quote-right" aria-hidden="true"></i>Bibtex</a>{% endif %}
     </div>
   </div>
   </div>
