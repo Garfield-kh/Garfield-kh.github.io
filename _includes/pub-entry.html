@@ -26,6 +26,7 @@
     <div class="pub-links">
       {% if post.paperurl %}<a href="{{ post.paperurl }}">{% if post.paperurl contains 'arxiv' %}arXiv{% else %}Paper{% endif %}</a>{% endif %}
       {% if post.project %}<a href="{{ post.project }}">Project</a>{% endif %}
+      {% if post.demo %}<a href="{{ post.demo }}">Demo</a>{% endif %}
       {% if post.code %}<a href="{{ post.code }}">Code</a>{% endif %}
       {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
       {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">Bibtex</a>{% endif %}
