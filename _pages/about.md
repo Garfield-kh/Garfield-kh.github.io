@@ -23,6 +23,7 @@ My research interests:
 
 <div class="news" markdown="1">
 
+* **[2026]** *MoCapAnything V2* accepted to **SIGGRAPH Asia 2026** (ACM TOG)
 * **[2026]** Started research on video generation and world models
 * **[2026]** *MoCapAnything V2* released on arXiv
 * **[2026]** *MoCapAnything* accepted to **CVPR 2026**
