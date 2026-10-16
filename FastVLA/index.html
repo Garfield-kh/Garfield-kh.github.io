@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="Fast-VLA (FastVLA): You Only Think Once for Robot Manipulation"/>
 <meta name="twitter:description" content="Fast-VLA (FastVLA): You Only Think Once for Robot Manipulation. A frozen 4B vision-language model builds fixed key-value task memory once per episode; a lightweight online actor then predicts action chunks without re-running the VLM. 92.43% on RoboTwin 2.0, 95.95% on LIBERO, 1.437 ms per step."/>
 <meta name="twitter:image" content="https://garfield-kh.github.io/FastVLA/assets/overview.png"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Fast-VLA: You Only Think Once for Robot Manipulation", "name": "Fast-VLA", "alternateName": ["FastVLA", "Fast VLA"], "description": "Fast-VLA (FastVLA): You Only Think Once for Robot Manipulation. A frozen 4B vision-language model builds fixed key-value task memory once per episode; a lightweight online actor then predicts action chunks without re-running the VLM. 92.43% on RoboTwin 2.0, 95.95% on LIBERO, 1.437 ms per step.", "url": "https://garfield-kh.github.io/FastVLA/", "author": [{"@type": "Person", "name": "Kehong Gong"}, {"@type": "Person", "name": "Guanli Hou"}, {"@type": "Person", "name": "Xiaoxu Zheng"}, {"@type": "Person", "name": "Qi Wang"}, {"@type": "Person", "name": "Mingxi Xu"}, {"@type": "Person", "name": "Anbang Zhai"}, {"@type": "Person", "name": "Xiaoyu He"}, {"@type": "Person", "name": "Mingyuan Zhang"}, {"@type": "Person", "name": "Michael Bi Mi"}], "keywords": ["Fast-VLA", "FastVLA", "vision-language-action", "VLA", "robot manipulation", "task memory", "KV cache", "RoboTwin", "LIBERO"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Fast-VLA: You Only Think Once for Robot Manipulation", "name": "Fast-VLA", "alternateName": ["FastVLA", "Fast VLA"], "description": "Fast-VLA (FastVLA): You Only Think Once for Robot Manipulation. A frozen 4B vision-language model builds fixed key-value task memory once per episode; a lightweight online actor then predicts action chunks without re-running the VLM. 92.43% on RoboTwin 2.0, 95.95% on LIBERO, 1.437 ms per step.", "url": "https://garfield-kh.github.io/FastVLA/", "sameAs": ["https://arxiv.org/abs/2610.21389"], "author": [{"@type": "Person", "name": "Kehong Gong"}, {"@type": "Person", "name": "Guanli Hou"}, {"@type": "Person", "name": "Xiaoxu Zheng"}, {"@type": "Person", "name": "Qi Wang"}, {"@type": "Person", "name": "Mingxi Xu"}, {"@type": "Person", "name": "Anbang Zhai"}, {"@type": "Person", "name": "Xiaoyu He"}, {"@type": "Person", "name": "Mingyuan Zhang"}, {"@type": "Person", "name": "Michael Bi Mi"}], "keywords": ["Fast-VLA", "FastVLA", "vision-language-action", "VLA", "robot manipulation", "task memory", "KV cache", "RoboTwin", "LIBERO"]}</script>
 <style>
 :root{
   --bg:#ffffff; --fg:#14181f; --mut:#5c6673; --line:#e3e7ec; --card:#f7f9fb;
@@ -184,7 +184,7 @@ h3{margin:30px 0 10px}
 </div>
 <div class="affil"><sup>1</sup>Huawei Technologies Co., Ltd &nbsp;&nbsp; <sup>2</sup>Huawei Central Research Institute &nbsp;&nbsp; <sup>&#8224;</sup>Corresponding author</div>
 <div class="links">
-<span class="soon" title="Coming soon">Paper (arXiv) · soon</span>
+<a href="https://arxiv.org/abs/2610.21389">Paper (arXiv)</a>
 <span class="soon" title="Coming soon">Code · soon</span>
 <span class="soon" title="Coming soon">Models · soon</span>
 <a class="ghost" href="#videos">Rollouts</a>
@@ -254,11 +254,15 @@ h3{margin:30px 0 10px}
 <p class="tnote">Fast-VLA reaches 94.00%, 90.27%, and 90.25% success on short-, medium-, and long-horizon tasks. On put_bottles_dustbin, it reaches 87.00% under a 1,700-step budget, permitting up to 34 actor calls with one task memory.</p>
 <p class="tnote">Per-task results for π₀, π₀.₅, X-VLA, Motus, and LingBot-VLA come from the StarVLA compilation, using RGB-only LingBot-VLA results. Fast-WAM results come from our evaluation of its released model. These per-task baseline results are sourced separately from the aggregate results above, so their overall averages may differ. Group success rates pool Clean and Randomized outcomes and are computed as total successes divided by total episodes. For Fast-VLA, we evaluate 100 episodes per task in each setting (10,000 episodes in total); the All 50 column pools all tasks and both settings.</p>
 </div></section>
-
-
-
-
-
+<section id="bibtex"><div class="wrap"><h2>BibTeX</h2>
+<pre><code>@article{gong2026fastvla,
+  title   = {Fast-VLA: You Only Think Once for Robot Manipulation},
+  author  = {Gong, Kehong and Hou, Guanli and Zheng, Xiaoxu and Wang, Qi and Xu, Mingxi and
+             Zhai, Anbang and He, Xiaoyu and Zhang, Mingyuan and Mi, Michael Bi},
+  journal = {arXiv preprint arXiv:2610.21389},
+  year    = {2026}
+}</code></pre>
+</div></section>
 <footer><div class="wrap">
   Fast-VLA · 2026
 </div></footer>
