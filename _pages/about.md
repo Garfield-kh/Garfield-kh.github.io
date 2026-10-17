@@ -14,8 +14,9 @@ I am a **Senior Staff Engineer** at **Huawei Singapore Research Center**. I rece
 My research interests:
 
 * **Motion capture & generation:** 3D human pose estimation, dance generation, and unified motion capture & retargeting for arbitrary skeletons (the *MoCapAnything* series).
-* **Video generation & world models:** joint audio–video generation, motion- and physics-aware video generation, and world models for interactive simulation; a recent direction I am exploring.
-* **Multimodal LLMs & VLMs:** multimodal understanding and reasoning, unifying understanding and generation, grounding vision–language models in 3D, motion, and embodied tasks; and efficient, deployable foundation models.
+* **Video generation & world models:** joint audio–video generation and world models for interactive simulation.
+* **Embodied AI:** vision-language-action models for robot manipulation, efficient closed-loop robot policies (*Fast-VLA*), and general-purpose embodied agents.
+* **Multimodal LLMs & VLMs:** multimodal understanding and reasoning, and efficient, deployable foundation models.
 
 </div>
 
@@ -25,7 +26,6 @@ My research interests:
 
 * **[2026]** *Fast-VLA* released on arXiv
 * **[2026]** *MoCapAnything V2* accepted to **SIGGRAPH Asia 2026** (ACM TOG)
-* **[2026]** Started research on video generation and world models
 * **[2026]** *MoCapAnything V2* released on arXiv
 * **[2026]** *MoCapAnything* accepted to **CVPR 2026**
 * **[2025]** *MoCapAnything* and *SWiT-4D* released on arXiv
@@ -96,6 +96,7 @@ html{scroll-padding-top:70px;}
 
 ### Professional experience
 * Dec 2022 – Present: Senior Staff Engineer, Huawei International Pte. Ltd.
+  * 2026–present: Embodied AI: vision-language-action models and efficient robot policies (*Fast-VLA*).
   * 2026–present: Pre-research on video generation models (world models, joint audio–video generation).
   * 2025: Unified 3D motion capture for arbitrary skeletons from monocular videos; deployed in the virtual-pet feature of Huawei smartphones (*MoCapAnything* series).
   * 2024: LLM/VLM inference & training acceleration: low-bit quantization, sparse/efficient attention, and model compression.

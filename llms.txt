@@ -1,0 +1,29 @@
+# Kehong Gong
+
+> Senior Staff Engineer at Huawei Singapore Research Center (Ph.D., National University of Singapore). Research on motion capture and generation, video generation and world models, embodied AI (vision-language-action models for robot manipulation), and multimodal foundation models.
+
+## Embodied AI
+
+- [Fast-VLA: You Only Think Once for Robot Manipulation](https://garfield-kh.github.io/FastVLA/) (also written FastVLA; arXiv 2026, [arXiv:2610.21389](https://arxiv.org/abs/2610.21389)): a vision-language-action policy that calls a frozen 4B vision-language model once per episode and keeps its layer-wise key-value cache as a fixed task memory; a lightweight online actor then predicts every action chunk from the current views and robot state. 92.46% / 92.40% success on RoboTwin 2.0 Clean / Randomized and 95.95% on LIBERO, with 10.9–17.1x lower amortized inference time than continually conditioned baselines. [Code](https://github.com/Garfield-kh/FastVLA), [model weights](https://huggingface.co/kehong/FastVLA-weights).
+
+## Motion capture and generation
+
+- [MoCapAnything V2: End-to-End Motion Capture for Arbitrary Skeletons](https://animotionlab.github.io/MoCapAnythingV2/) (ACM TOG / SIGGRAPH Asia 2026, [arXiv:2604.28130](https://arxiv.org/abs/2604.28130)): end-to-end motion capture for arbitrary skeletons.
+- [MoCapAnything: Unified 3D Motion Capture for Arbitrary Skeletons from Monocular Videos](https://animotionlab.github.io/MoCapAnything/) (CVPR 2026, [arXiv:2512.10881](https://arxiv.org/abs/2512.10881)): unified 3D motion capture for arbitrary skeletons from monocular videos.
+- [SWiT-4D: Sliding-Window Transformer for Lossless and Parameter-Free Temporal 4D Generation](https://animotionlab.github.io/SWIT4D/) (arXiv 2025, [arXiv:2512.10860](https://arxiv.org/abs/2512.10860)).
+- [MotionMix: Weakly-Supervised Diffusion for Controllable Motion Generation](https://nhathoang2002.github.io/MotionMix-page/) (AAAI 2024, [arXiv:2401.11115](https://arxiv.org/abs/2401.11115)).
+- [TM2D: Bimodality Driven 3D Dance Generation via Music-Text Integration](https://garfield-kh.github.io/TM2D/) (ICCV 2023, [arXiv:2304.02419](https://arxiv.org/abs/2304.02419)).
+- [Priority-centric Human Motion Generation in Discrete Latent Space](https://arxiv.org/abs/2308.14480) (ICCV 2023).
+
+## 3D human pose estimation
+
+- [Learning to Augment Poses for 3D Human Pose Estimation in Images and Videos](https://ieeexplore.ieee.org/document/10050391) (IEEE TPAMI 2023).
+- [PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision](https://arxiv.org/abs/2203.15625) (CVPR 2022, oral).
+- [PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation](https://arxiv.org/abs/2105.02465) (CVPR 2021, oral, best paper candidate).
+
+## Links
+
+- [Homepage](https://garfield-kh.github.io/)
+- [Google Scholar](https://scholar.google.com/citations?user=zHKIX_gAAAAJ&hl=en)
+- [GitHub](https://github.com/Garfield-kh)
+- [Hugging Face](https://huggingface.co/kehong)
