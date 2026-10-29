@@ -245,6 +245,7 @@
     paper: '<path d="M6 2h9l5 5v15H6z M14 2v6h6" />',
     arxiv: '<path d="M4 4l16 16M20 4L4 20" />',
     code: '<path d="M8 6l-6 6 6 6M16 6l6 6-6 6" />',
+    gitcode: '<path d="M6 3v12M18 9a3 3 0 1 0 0-.01M6 21a3 3 0 1 0 0-.01M18 12c0 4-6 3-12 6" />',
     weights: '<path d="M12 3v12M6 9l6 6 6-6M4 21h16" />',
     bibtex: '<path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h3" />',
   };
@@ -254,13 +255,14 @@
       ["paper", "Paper", C.links.paper, C.ANON ? false : !live(C.links.paper)],
       ["arxiv", "arXiv", C.links.arxiv, !live(C.links.arxiv)],
       ["code", "Code", C.links.code, !live(C.links.code)],
+      ...(C.links.gitcode ? [["gitcode", "GitCode", C.links.gitcode, false]] : []),
       ["weights", "Weights", C.links.weights, !live(C.links.weights)],
       ...(C.SHOW_BIBTEX === false ? [] : [["bibtex", "BibTeX", "#bibtex", false]]),
     ];
     $(sel).innerHTML = defs.map(([k, label, href, disabled], i) => {
       const icon = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${LICON[k]}</svg>`;
       if (disabled) return `<span class="btn btn-disabled" title="Coming soon">${icon}${label}<small>soon</small></span>`;
-      return `<a class="btn${i === 0 ? " primary" : ""}" href="${esc(href)}">${icon}${label}</a>`;
+      return `<a class="btn${i === 0 ? " primary" : ""}" href="${esc(href)}"${/^https?:/.test(href) ? ' target="_blank" rel="noopener"' : ""}>${icon}${label}</a>`;
     }).join("");
   }
   function countUp() {

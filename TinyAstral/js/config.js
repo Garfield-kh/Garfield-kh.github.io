@@ -17,6 +17,7 @@ window.SITE_CONFIG = {
     paper: "#",
     arxiv: "#",
     code: "#",
+    gitcode: "https://gitcode.com/cann/cann-recipes-embodied-ai",
     weights: "#",
   },
 
