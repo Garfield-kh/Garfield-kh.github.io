@@ -696,3 +696,7 @@ table.results th.bh { white-space: nowrap; }
   .how-panel, .how-step { opacity: 1 !important; transform: none !important; display: block !important; }
   .how-dots { display: none !important; }
 }
+
+/* ---------- static abstract ---------- */
+.abstract-sec p { color: var(--muted); line-height: 1.7; margin: 0 0 .9em; max-width: 72ch; }
+.abstract-sec p b { color: var(--text); }

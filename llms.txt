@@ -4,6 +4,7 @@
 
 ## Embodied AI
 
+- [TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents](https://garfield-kh.github.io/TinyAstral/) (2026): a frozen open-weight teacher (~180B) improves only through harness edits (tools, feedback, memory, recovery) that frontier LLM agents propose and paired statistical tests accept (harness recursive self-improvement); RoboTwin success rises from 33.4% to 63.6%. The final harness is distilled into 0.8B-4B students: TinyAstral-4B reaches 62.8% and stays close to its teacher on six robot-manipulation benchmarks (RoboTwin, Guava, LIBERO-PRO, SimplerEnv, VLABench, EmbodiedBench), and runs closed-loop on a real SO-ARM101 arm served on Huawei Ascend Atlas A2. [Ascend recipe on GitCode](https://gitcode.com/cann/cann-recipes-embodied-ai).
 - [Fast-VLA: You Only Think Once for Robot Manipulation](https://garfield-kh.github.io/FastVLA/) (also written FastVLA; arXiv 2026, [arXiv:2610.21389](https://arxiv.org/abs/2610.21389)): a vision-language-action policy that calls a frozen 4B vision-language model once per episode and keeps its layer-wise key-value cache as a fixed task memory; a lightweight online actor then predicts every action chunk from the current views and robot state. 92.46% / 92.40% success on RoboTwin 2.0 Clean / Randomized and 95.95% on LIBERO, with 10.9–17.1x lower amortized inference time than continually conditioned baselines. [Code](https://github.com/Garfield-kh/FastVLA), [model weights](https://huggingface.co/kehong/FastVLA-weights).
 
 ## Motion capture and generation
