@@ -1,0 +1,81 @@
+{
+ "id": "s1_task_note_goal_after",
+ "title": "After (H3): the task note says how far, so the card goes 30 cm outward",
+ "benchmark": "RoboTwin",
+ "split": "development (paired A/B)",
+ "instruction": "Use the left arm to grab the rectangular playingcards case with patterns and relocate it.",
+ "model": "Teacher (Qwen3.8-Flash)",
+ "harness": "H3",
+ "outcome": "success",
+ "task": "move_playingcard_away",
+ "seed": 75002,
+ "recovered": false,
+ "caption": "4 tool calls; task succeeded.",
+ "call_limit": 30,
+ "end_reason": "model_done",
+ "wall_seconds": 54.7,
+ "duration": 18.56,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000_head.jpg"
+  },
+  {
+   "t": 4.05,
+   "src": "frames/001_head.jpg"
+  },
+  {
+   "t": 7.56,
+   "src": "frames/002_head.jpg"
+  },
+  {
+   "t": 12.03,
+   "src": "frames/003_head.jpg"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 4.05,
+   "input": "Task: Use the left arm to grab the rectangular playingcards case with patterns and relocate it.\nTask note (from earlier practice on this task):\n- End: card deck lies flat on table, about 30 cm farther outward from its start along x, same y, orientation unchanged, released.\n- If it started left of center, end about 30 cm left; if right, about 30 cm right; keep it on table, not held.\n- Use left arm for left-side card, right arm for right-side card; grasp the card deck.\n- Strategy: locate, grasp, move about 30 cm outward, release.\nObjects in the scene: playingcards\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 0/30.",
+   "image": "frames/000_head.jpg",
+   "think": "The task is to use the left arm to grab the playing cards case and relocate it about 30 cm outward along x. The card deck appears to be in the middle-left area of the table. Let me first locate it to get its position.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"playingcards\"]}}",
+   "result": "{\"objects\": {\"playingcards\": {\"visible\": true, \"center\": [-7.0, -10.0, 1.0], \"size\": [8.8, 8.7, 2.1], \"top_z\": 2.1}}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 4.05,
+   "t_end": 7.56,
+   "input": "Task goal (from the note): Card deck released flat on table about 30 cm farther outward than start, same row and orientation.\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 1/30.",
+   "image": "frames/001_head.jpg",
+   "think": "The card deck is at x=-7, left of center, so it should end about 30 cm left: x ≈ -37, same y=-10. Use left arm. First grasp the playingcards.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"arm\": \"left\", \"object\": \"playingcards\"}}",
+   "result": "{\"left\": {\"code\": \"OK\", \"grasp\": \"body centre across the narrow side\", \"grasp_point_cm\": [-6.4, -10.3, 1.0], \"approach\": \"top-down\", \"finger_opening\": 0.439, \"lift_test\": \"object not visible; judged by finger opening\", \"attempts\": 1}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 7.56,
+   "t_end": 12.03,
+   "input": "Task goal (from the note): Card deck released flat on table about 30 cm farther outward than start, same row and orientation.\nArms: left: gripper at [-6.8, -10.5, 8.3] cm, opening 64%, holding playingcards; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 2/30.",
+   "image": "frames/002_head.jpg",
+   "think": "Move left by 30 cm: dx=-30, keep y, lift slightly then release. Let's move dz up first? We can move dx=-30, dz=+5 then place on table. Use move with dz to raise, then place with ref table xy=[-37,-10].\n\nSimpler: place(arm=left, object=playingcards, ref=\"table\", xy=[-37,-10]).",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"arm\": \"left\", \"object\": \"playingcards\", \"ref\": \"table\", \"xy\": [-37.0, -10.0]}}",
+   "result": "{\"left\": {\"code\": \"OK\", \"target\": \"table point\", \"target_cm\": [-37.0, -10.0, 0.5], \"xy_corrections_cm\": [], \"object_now\": {\"center\": [-36.9, -9.4, 1.0], \"bottom_z\": 0.0}, \"placed_offset_cm\": [0.2, 0.6]}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 12.03,
+   "t_end": 15.56,
+   "input": "Task goal (from the note): Card deck released flat on table about 30 cm farther outward than start, same row and orientation.\nArms: left: gripper at [-37.0, -9.9, 13.0] cm, opening 94%, holding nothing; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 3/30.",
+   "image": "frames/003_head.jpg",
+   "think": "The card deck was placed at [-36.9, -9.4], which is about 30 cm outward from start [-7, -10], same row, flat on table, released. Verify and done.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"on_table\", \"playingcards\"], [\"released\", \"left\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"on_table\", \"playingcards\"], \"ok\": true, \"why\": \"bottom 0.0 cm above the table\"}, {\"check\": [\"released\", \"left\"], \"ok\": true, \"why\": \"left gripper opening 94%\"}]}",
+   "result_ok": true
+  }
+ ],
+ "video_alt": "video.mp4",
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "playback_note": "One head-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time. video.mp4 is the same frame sequence on the same clock."
+}

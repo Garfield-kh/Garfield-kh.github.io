@@ -1,0 +1,220 @@
+{
+ "id": "guava_set_table",
+ "title": "Notices a knocked-off bowl and restores it",
+ "benchmark": "Guava",
+ "split": "training",
+ "instruction": "Set the table by placing the bowl on the plate and the spoon next to the plate.",
+ "model": "TinyAstral-4B",
+ "harness": "H* (final)",
+ "outcome": "success",
+ "recovered": true,
+ "caption": "12 tool calls; 2 failed tool results or checks before the task succeeded.",
+ "call_limit": 30,
+ "end_reason": "model_done",
+ "wall_seconds": 86.8,
+ "duration": 60.84,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000.jpg"
+  },
+  {
+   "t": 3.59,
+   "src": "frames/001.jpg"
+  },
+  {
+   "t": 8.56,
+   "src": "frames/002.jpg"
+  },
+  {
+   "t": 12.06,
+   "src": "frames/003.jpg"
+  },
+  {
+   "t": 18.34,
+   "src": "frames/004.jpg"
+  },
+  {
+   "t": 21.91,
+   "src": "frames/005.jpg"
+  },
+  {
+   "t": 26.76,
+   "src": "frames/006.jpg"
+  },
+  {
+   "t": 31.37,
+   "src": "frames/007.jpg"
+  },
+  {
+   "t": 40.37,
+   "src": "frames/008.jpg"
+  },
+  {
+   "t": 46.96,
+   "src": "frames/009.jpg"
+  },
+  {
+   "t": 50.84,
+   "src": "frames/010.jpg"
+  },
+  {
+   "t": 54.34,
+   "src": "frames/011.jpg"
+  },
+  {
+   "t": 57.84,
+   "src": "frames/final.jpg",
+   "label": "final state"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 3.59,
+   "input": "Task: Set the table by placing the bowl on the plate and the spoon next to the plate.\nGripper: tcp [0.454, -0.000, 0.308], opening 97%, holding: nothing (per last verified grasp).\nCalls used: 0/30.",
+   "image": "frames/000.jpg",
+   "think": "I need to set the table by placing the bowl on the plate and the spoon next to the plate. Let me first locate all objects to understand their positions.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"bowl\", \"plate\", \"spoon\"]}}",
+   "result": "{\"objects\": {\"bowl\": {\"visible\": true, \"center\": [0.533, 0.091, 0.028], \"size\": [0.104, 0.095, 0.041], \"top_z\": 0.049}, \"plate\": {\"visible\": true, \"center\": [0.705, 0.06, 0.008], \"size\": [0.166, 0.161, 0.009], \"top_z\": 0.013}, \"spoon\": {\"visible\": true, \"center\": [0.475, -0.167, 0.016], \"size\": [0.102, 0.076, 0.023], \"top_z\": 0.028}}}",
+   "result_ok": true,
+   "wall_t_start": 0.8,
+   "wall_t_end": 5.4
+  },
+  {
+   "t_start": 3.59,
+   "t_end": 8.56,
+   "input": "Gripper: tcp [0.454, -0.000, 0.308], opening 97%, holding: nothing (per last verified grasp).\nCalls used: 1/30.",
+   "image": "frames/001.jpg",
+   "think": "The bowl is at [0.533, 0.091], the plate at [0.705, 0.06]. Wait, the coordinates: the plate center is [0.705, 0.06]? But in the image the plate appears in the front-center, and the bowl is behind it. Hmm, the table frame coordinates might be different from the image. Anyway, let's grasp the bowl and place it on the plate.\n\nFirst, grasp the bowl.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"bowl\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 4.61, \"opening\": 0.24, \"rose_cm\": 3.9, \"object_motion_cm\": {\"bowl\": 4.0}}",
+   "result_ok": true,
+   "wall_t_start": 6.8,
+   "wall_t_end": 15.7
+  },
+  {
+   "t_start": 8.56,
+   "t_end": 12.06,
+   "input": "Gripper: tcp [0.499, 0.051, 0.085], opening 21%, holding: bowl.\nCalls used: 2/30.",
+   "image": "frames/002.jpg",
+   "think": "The bowl is held. Now place it on the plate.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"bowl\", \"ref\": \"plate\", \"relation\": \"on\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.27, \"object_motion_cm\": {\"bowl\": 24.6}, \"gen_post_release\": {\"target\": [0.705, 0.06, 0.045], \"object_now\": [0.757, 0.124, 0.16], \"bottom_z\": 0.135, \"jump_cm\": 8.2, \"over_ref\": true, \"placed_offset_cm\": [5.2, 6.4]}}",
+   "result_ok": true,
+   "wall_t_start": 16.4,
+   "wall_t_end": 24.6
+  },
+  {
+   "t_start": 12.06,
+   "t_end": 18.34,
+   "input": "Gripper: tcp [0.705, 0.060, 0.180], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 3/30.",
+   "image": "frames/003.jpg",
+   "think": "The bowl appears to be placed near the plate but the image shows it to the right/behind the plate, not on it. The placed_offset is 5.2, 6.4 cm. The bowl's bottom_z is 0.135 which is above plate top (0.013)? That's odd — bowl bottom at 0.135 m above table, which is high. Hmm, maybe the bowl is resting on the plate rim? Actually plate top_z = 0.013, bowl bottom 0.135 seems too high. But \"over_ref\": true. Let me verify with on(bowl, plate).\n\nActually the image shows the bowl to the right of the plate, not on it. Let me verify.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"on\", \"bowl\", \"plate\"], [\"in\", \"bowl\", \"plate\"]]}}",
+   "result": "{\"all_pass\": false, \"checks\": [{\"check\": [\"on\", \"bowl\", \"plate\"], \"ok\": true, \"why\": \"bowl over plate: True; bottom 13 cm vs top 1 cm\"}, {\"check\": [\"in\", \"bowl\", \"plate\"], \"ok\": false, \"why\": \"bowl centre 8 cm from plate centre, bottom 13 cm vs rim 1 cm\"}]}",
+   "result_ok": false,
+   "wall_t_start": 26.7,
+   "wall_t_end": 28.0
+  },
+  {
+   "t_start": 18.34,
+   "t_end": 21.91,
+   "input": "Gripper: tcp [0.705, 0.060, 0.180], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 4/30.",
+   "image": "frames/004.jpg",
+   "think": "The bowl is on the plate (on check passes). The image shows the bowl sitting on the plate. Good.\n\nNow grasp the spoon and place it next to the plate.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"spoon\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 4.7, \"opening\": 0.425, \"rose_cm\": 5.0, \"object_motion_cm\": {\"bowl\": 52.6, \"spoon\": 5.8}}",
+   "result_ok": true,
+   "wall_t_start": 28.8,
+   "wall_t_end": 37.8
+  },
+  {
+   "t_start": 21.91,
+   "t_end": 26.76,
+   "input": "Gripper: tcp [0.469, -0.160, 0.065], opening 39%, holding: spoon.\nCalls used: 5/30.",
+   "image": "frames/005.jpg",
+   "think": "The bowl moved 52.6 cm? That's odd — maybe the bowl was knocked. Let me check the image: the bowl appears to be on the left side of the table, and the plate is in the center. The bowl seems to have been displaced. Let me re-locate the bowl and plate.\n\nActually, the grasp of the spoon may have knocked the bowl. Let me re-locate.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"bowl\", \"plate\", \"spoon\"]}}",
+   "result": "{\"objects\": {\"bowl\": {\"visible\": true, \"center\": [0.431, -0.267, 0.028], \"size\": [0.105, 0.093, 0.042], \"top_z\": 0.049}, \"plate\": {\"visible\": true, \"center\": [0.705, 0.06, 0.008], \"size\": [0.165, 0.162, 0.009], \"top_z\": 0.013}, \"spoon\": {\"visible\": true, \"center\": [0.482, -0.163, 0.073], \"size\": [0.087, 0.079, 0.038], \"top_z\": 0.092}}}",
+   "result_ok": true,
+   "wall_t_start": 39.2,
+   "wall_t_end": 41.9
+  },
+  {
+   "t_start": 26.76,
+   "t_end": 31.37,
+   "input": "Gripper: tcp [0.469, -0.160, 0.065], opening 39%, holding: spoon.\nCalls used: 6/30.",
+   "image": "frames/006.jpg",
+   "think": "The bowl is now at [0.431, -0.267] — it seems the bowl got knocked off the plate during the spoon grasp (object_motion bowl 52.6 cm). The spoon is held. I need to place the spoon next to the plate, then re-grasp the bowl and place it on the plate.\n\nLet me place the spoon next to the plate first.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"spoon\", \"ref\": \"plate\", \"relation\": \"left_of\", \"gap_cm\": 4}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.24, \"object_motion_cm\": {\"spoon\": 24.6}, \"gen_post_release\": {\"target\": [0.705, -0.11, 0.029], \"object_now\": [0.716, -0.112, 0.017], \"bottom_z\": 0.006, \"jump_cm\": 1.1, \"placed_offset_cm\": [1.1, -0.2]}}",
+   "result_ok": true,
+   "wall_t_start": 43.2,
+   "wall_t_end": 50.8
+  },
+  {
+   "t_start": 31.37,
+   "t_end": 40.37,
+   "input": "Gripper: tcp [0.705, -0.110, 0.146], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 7/30.",
+   "image": "frames/007.jpg",
+   "think": "The spoon was placed at [0.716, -0.112], which is in front of the plate (plate at [0.705, 0.06]). Wait, \"left_of\" in camera view... The target was [0.705, -0.11] which is y negative = front. Hmm, the tool computed left_of as front? Anyway, the spoon is now near the plate. Let me verify.\n\nActually the image shows the spoon in front of the plate (closer to camera). That's fine — \"next to the plate\". Let me verify with checks.\n\nBut wait — the bowl: the task says \"Set the table by placing the bowl on the plate and the spoon next to the plate.\" The bowl is currently at [0.431, -0.267] on the table, NOT on the plate. My earlier place claimed OK but the bowl ended up far away (it seems the bowl was dropped somewhere else — object_motion 24.6 cm and now at [0.431,-0.267]). Hmm, actually the bowl was at [0.533, 0.091] initially, and now at [0.431, -0.267]. That's odd. Maybe the bowl fell off the table? It's visible in the image at the left edge.\n\nSo I need to place the bowl on the plate now. Let me first verify the spoon placement, then re-grasp the bowl.\n\nActually let me just proceed: grasp the bowl and place it on the plate.\n\nBut the bowl is at the left edge of the table, partially off? In the image it appears at the left edge. Let's try grasping it.\n\nFirst, verify spoon next_to plate.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"next_to\", \"spoon\", \"plate\"], [\"on\", \"bowl\", \"plate\"]]}}",
+   "result": "{\"all_pass\": false, \"checks\": [{\"check\": [\"next_to\", \"spoon\", \"plate\"], \"ok\": true, \"why\": \"centres 17 cm apart\"}, {\"check\": [\"on\", \"bowl\", \"plate\"], \"ok\": false, \"why\": \"bowl over plate: False; bottom 1 cm vs top 1 cm\"}]}",
+   "result_ok": false,
+   "wall_t_start": 55.4,
+   "wall_t_end": 56.9
+  },
+  {
+   "t_start": 40.37,
+   "t_end": 46.96,
+   "input": "Gripper: tcp [0.705, -0.110, 0.146], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 8/30.",
+   "image": "frames/008.jpg",
+   "think": "The bowl is not on the plate. The image shows the bowl on the left side of the table, and the plate in the middle. The spoon is between them. I need to grasp the bowl and place it on the plate.\n\nWait, the earlier place said the bowl was placed on the plate, but now the bowl is at [0.431, -0.267] which is far from the plate at [0.705, 0.06]. Hmm, actually the bowl moved? The spoon grasp reported bowl motion 52.6 cm — that was probably the spoon being confused with the bowl. Anyway, the bowl is now on the table at left.\n\nLet me grasp the bowl and place it on the plate.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"bowl\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 4.65, \"opening\": 0.471, \"rose_cm\": 4.7, \"object_motion_cm\": {\"bowl\": 5.6}}",
+   "result_ok": true,
+   "wall_t_start": 59.2,
+   "wall_t_end": 66.9
+  },
+  {
+   "t_start": 46.96,
+   "t_end": 50.84,
+   "input": "Gripper: tcp [0.478, -0.243, 0.086], opening 27%, holding: bowl.\nCalls used: 9/30.",
+   "image": "frames/009.jpg",
+   "think": "The bowl is now held. The plate is at [0.705, 0.06]. Place the bowl on the plate.\n\nWait, but the previous place put the bowl at [0.757, 0.124] which was off. Let me try again with a small gap.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"bowl\", \"ref\": \"plate\", \"relation\": \"on\", \"gap_cm\": 1}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.26, \"object_motion_cm\": {\"bowl\": 38.0, \"plate\": 1.0}, \"gen_post_release\": {\"target\": [0.705, 0.06, 0.048], \"object_now\": [0.666, 0.046, 0.036], \"bottom_z\": 0.012, \"jump_cm\": 4.2, \"over_ref\": true, \"placed_offset_cm\": [-3.9, -1.4]}}",
+   "result_ok": true,
+   "wall_t_start": 68.6,
+   "wall_t_end": 76.1
+  },
+  {
+   "t_start": 50.84,
+   "t_end": 54.34,
+   "input": "Gripper: tcp [0.705, 0.060, 0.170], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 10/30.",
+   "image": "frames/010.jpg",
+   "think": "The bowl is now on the plate (bottom_z 0.012, over_ref true). The spoon is next to the plate. Let me verify.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"on\", \"bowl\", \"plate\"], [\"next_to\", \"spoon\", \"plate\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"on\", \"bowl\", \"plate\"], \"ok\": true, \"why\": \"bowl over plate: True; bottom 1 cm vs top 1 cm\"}, {\"check\": [\"next_to\", \"spoon\", \"plate\"], \"ok\": true, \"why\": \"centres 17 cm apart\"}]}",
+   "result_ok": true,
+   "wall_t_start": 77.4,
+   "wall_t_end": 79.1
+  },
+  {
+   "t_start": 54.34,
+   "t_end": 57.84,
+   "input": "Gripper: tcp [0.705, 0.060, 0.170], opening 98%, holding: nothing (per last verified grasp).\nCalls used: 11/30.",
+   "image": "frames/011.jpg",
+   "think": "Both checks pass. The bowl is on the plate, and the spoon is next to the plate. Task complete.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"on\", \"bowl\", \"plate\"], [\"next_to\", \"spoon\", \"plate\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"on\", \"bowl\", \"plate\"], \"ok\": true, \"why\": \"bowl over plate: True; bottom 1 cm vs top 1 cm\"}, {\"check\": [\"next_to\", \"spoon\", \"plate\"], \"ok\": true, \"why\": \"centres 17 cm apart\"}]}",
+   "result_ok": true,
+   "wall_t_start": 80.0,
+   "wall_t_end": 81.5
+  }
+ ],
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "paper_ref": "Fig. 3 (R2)",
+ "playback_note": "One agent-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time."
+}

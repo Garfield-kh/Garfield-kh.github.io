@@ -1,0 +1,107 @@
+{
+ "id": "real_02",
+ "title": "Stacks three tape rolls",
+ "benchmark": "Real robot",
+ "split": "real",
+ "instruction": "Stack blue tape on white tape, and then stack brown tape on blue tape.",
+ "model": "TinyAstral-4B",
+ "outcome": "success",
+ "end_reason": "halted",
+ "wall_seconds": 373.7,
+ "source": "real-robot inference log",
+ "steps": [
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.171, 0.002, 0.043], opening 100%, holding: nothing (per last verified grasp).\nTime used: 0/500 s. Calls used: 0.",
+   "think": "",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"blue tape\", \"white tape\", \"brown tape\"]}}",
+   "result": "{\"objects\": {\"blue tape\": {\"visible\": true, \"center\": [0.236, -0.009, 0.014], \"size\": [0.097, 0.086, 0.022]}, \"white tape\": {\"visible\": true, \"center\": [0.193, 0.116, 0.015], \"size\": [0.093, 0.087, 0.024]}, \"brown tape\": {\"visible\": true, \"center\": [0.189, -0.131, 0.014], \"size\": [0.103, 0.089, 0.027]}}}",
+   "wall_t_start": 2.066,
+   "wall_t_end": 4.723,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.171, 0.002, 0.043], opening 100%, holding: nothing (per last verified grasp).\nTime used: 5/500 s. Calls used: 1.",
+   "think": "",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"blue tape\", \"approach\": \"top\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 5.0, \"opening\": 0.126, \"rose_cm\": 5.0, \"object_motion_cm\": {\"blue tape\": 5.0}}",
+   "wall_t_start": 7.693,
+   "wall_t_end": 64.238,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.236, -0.033, 0.066], opening 13%, holding: blue tape.\nTime used: 64/500 s. Calls used: 2.",
+   "think": "",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"blue tape\", \"ref\": \"white tape\", \"relation\": \"on\", \"gap_cm\": 0}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"released\": true, \"executor\": \"stack_tape\", \"support_height_mm\": 33.8, \"center_source\": \"rgbd_3d_ring\", \"center_error_estimate_mm\": null, \"pre_release_center_error_mm\": 7.1, \"center_error_mm\": 4.6, \"post_release_observed\": true, \"post_release_xy\": [0.19, 0.121], \"release_gap_mm\": 1.6, \"contact_confirmed\": false, \"note\": \"Measured support height and rigid carry pose; inspect the images to verify seating\"}",
+   "wall_t_start": 67.422,
+   "wall_t_end": 142.676,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.213, 0.056, 0.103], opening 100%, holding: nothing (per last verified grasp).\nTime used: 143/500 s. Calls used: 3.",
+   "think": "",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"approach\": \"top\", \"object\": \"brown tape\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 5.0, \"opening\": 0.191, \"rose_cm\": 5.0, \"object_motion_cm\": {\"white tape\": 1.1, \"brown tape\": 5.0}}",
+   "wall_t_start": 145.672,
+   "wall_t_end": 215.247,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.190, -0.156, 0.071], opening 19%, holding: brown tape.\nTime used: 215/500 s. Calls used: 4.",
+   "think": "",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"gap_cm\": 0, \"object\": \"brown tape\", \"ref\": \"blue tape\", \"relation\": \"on\"}}",
+   "result": "{\"code\": \"ERROR\", \"why\": \"IKError: J4=95.2° exceeds URDF limit [-95.0, 95.0]\"}",
+   "wall_t_start": 218.493,
+   "wall_t_end": 270.406,
+   "result_ok": false
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.186, -0.039, 0.149], opening 19%, holding: brown tape.\nTime used: 270/500 s. Calls used: 5.",
+   "think": "",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"blue tape\", \"brown tape\"]}}",
+   "result": "{\"objects\": {\"blue tape\": {\"visible\": true, \"center\": [0.181, 0.126, 0.031], \"size\": [0.1, 0.094, 0.053]}, \"brown tape\": {\"visible\": true, \"center\": [0.189, -0.016, 0.14], \"size\": [0.102, 0.097, 0.077]}}}",
+   "wall_t_start": 275.294,
+   "wall_t_end": 277.799,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.187, -0.040, 0.148], opening 19%, holding: brown tape.\nTime used: 278/500 s. Calls used: 6.",
+   "think": "",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"gap_cm\": 0, \"object\": \"brown tape\", \"ref\": \"blue tape\", \"relation\": \"on\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"released\": true, \"executor\": \"stack_tape\", \"support_height_mm\": 60.4, \"center_source\": \"rgbd_3d_ring\", \"center_error_estimate_mm\": null, \"pre_release_center_error_mm\": 2.9, \"center_error_mm\": 0.601, \"post_release_observed\": true, \"post_release_xy\": [0.192, 0.119], \"release_gap_mm\": 1.7, \"contact_confirmed\": false, \"note\": \"Measured support height and rigid carry pose; inspect the images to verify seating\"}",
+   "wall_t_start": 282.16,
+   "wall_t_end": 367.622,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.196, 0.050, 0.210], opening 100%, holding: nothing (per last verified grasp).\nTime used: 368/500 s. Calls used: 7.",
+   "think": "",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"on\", \"brown tape\", \"blue tape\"], [\"on\", \"blue tape\", \"white tape\"]]}}",
+   "result": "{\"all_pass\": false, \"checks\": [{\"check\": [\"on\", \"brown tape\", \"blue tape\"], \"ok\": false, \"why\": \"brown tape over blue tape: True; bottom 1 cm vs top 7 cm\"}, {\"check\": [\"on\", \"blue tape\", \"white tape\"], \"ok\": null, \"why\": \"cannot see the white tape\"}]}",
+   "wall_t_start": 370.977,
+   "wall_t_end": 373.737,
+   "result_ok": false
+  }
+ ],
+ "think_mode": "action",
+ "outcome_label": "Task success (human-judged)",
+ "page_caption": "TinyAstral-4B closed loop on a real SO-ARM101 arm, 8 tool calls. This run did not log the model's reasoning, so the panel shows each tool call and its result. The planner stacks the blue roll on the white one, re-locates the rolls and stacks the brown roll on the blue one; the operator then stopped the run and judged the stack a success. Arm motion is fast-forwarded (speed shown on the video).",
+ "page_speed": "partly fast-forwarded",
+ "planner_note": "Each call the planner sees front, wrist and side camera images (+ depth) and the robot state, and returns exactly one tool call."
+}

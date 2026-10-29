@@ -1,0 +1,204 @@
+{
+ "id": "liberopro_t141_s1",
+ "title": "Switches grasp point between grasp attempts",
+ "benchmark": "LIBERO-PRO",
+ "split": "training",
+ "instruction": "Put the plate on the stove",
+ "model": "TinyAstral-4B",
+ "harness": "H* (final)",
+ "outcome": "success",
+ "recovered": true,
+ "caption": "11 tool calls; 4 failed tool results or checks before the task succeeded.",
+ "call_limit": null,
+ "end_reason": "model_done",
+ "wall_seconds": 86.9,
+ "duration": 61.85,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000.jpg"
+  },
+  {
+   "t": 3.5,
+   "src": "frames/001.jpg"
+  },
+  {
+   "t": 8.16,
+   "src": "frames/002.jpg"
+  },
+  {
+   "t": 14.07,
+   "src": "frames/003.jpg"
+  },
+  {
+   "t": 19.34,
+   "src": "frames/004.jpg"
+  },
+  {
+   "t": 25.56,
+   "src": "frames/005.jpg"
+  },
+  {
+   "t": 30.14,
+   "src": "frames/006.jpg"
+  },
+  {
+   "t": 39.14,
+   "src": "frames/007.jpg"
+  },
+  {
+   "t": 43.37,
+   "src": "frames/008.jpg"
+  },
+  {
+   "t": 51.75,
+   "src": "frames/009.jpg"
+  },
+  {
+   "t": 55.35,
+   "src": "frames/010.jpg"
+  },
+  {
+   "t": 58.85,
+   "src": "frames/final.jpg",
+   "label": "final state"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 3.5,
+   "input": "Task: Put the plate on the stove\nGripper: tcp [0.452, 0.000, 0.273], opening 99%, holding: nothing (per last verified grasp).\nTime used: 0/450 s. Calls used: 0.",
+   "image": "frames/000.jpg",
+   "think": "The user wants me to put the plate on the stove. I need to first locate the objects to understand their positions.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"plate\", \"stove\"]}}",
+   "result": "{\"objects\": {\"plate\": {\"visible\": true, \"center\": [0.695, -0.028, 0.008], \"size\": [0.112, 0.117, 0.017], \"top_z\": 0.017}, \"stove\": {\"visible\": true, \"center\": [0.412, 0.21, 0.02], \"size\": [0.172, 0.178, 0.023], \"top_z\": 0.031}}}",
+   "result_ok": true,
+   "wall_t_start": 1.0,
+   "wall_t_end": 1.7
+  },
+  {
+   "t_start": 3.5,
+   "t_end": 8.16,
+   "input": "Gripper: tcp [0.452, 0.000, 0.273], opening 99%, holding: nothing (per last verified grasp).\nTime used: 2/450 s. Calls used: 1.",
+   "image": "frames/001.jpg",
+   "think": "The plate is at [0.695, -0.028, 0.008], the stove at [0.412, 0.21, 0.02]. Wait, the stove center y=0.21 which is image right. The plate is at y=-0.028, near center.\n\nGrasp the plate from top. It's a flat plate with a rim; grasping the middle might work since it's a plate (concave). Let's try top grasp.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"plate\", \"approach\": \"top\"}}",
+   "result": "{\"code\": \"EMPTY_GRASP\", \"ok\": false, \"pose_err_cm\": 16.73, \"opening\": 0.025, \"regrasps\": 1, \"object_motion_cm\": {}}",
+   "result_ok": false,
+   "wall_t_start": 4.8,
+   "wall_t_end": 14.8
+  },
+  {
+   "t_start": 8.16,
+   "t_end": 14.07,
+   "input": "Gripper: tcp [0.688, -0.086, 0.164], opening 3%, holding: nothing (per last verified grasp).\nTime used: 15/450 s. Calls used: 2.",
+   "image": "frames/002.jpg",
+   "think": "The grasp failed with pose_err_cm 16.73 — the gripper ended up at [0.688, -0.086, 0.164] but the plate is at [0.695, -0.028, 0.008]. The y offset is about 6cm. Hmm, the gripper seems to have gone off. Let me re-locate the plate and try again, maybe with edge grasp.\n\nActually the plate is flat (1.7 cm tall), so a top grasp in the middle may not work well since there's nothing to grasp. Better to grasp the rim edge. Let me try edge=\"left\" or \"right\".\n\nLet me re-locate first.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"plate\"]}}",
+   "result": "{\"objects\": {\"plate\": {\"visible\": true, \"center\": [0.695, -0.029, 0.008], \"size\": [0.111, 0.117, 0.017], \"top_z\": 0.017}}}",
+   "result_ok": true,
+   "wall_t_start": 18.5,
+   "wall_t_end": 18.6
+  },
+  {
+   "t_start": 14.07,
+   "t_end": 19.34,
+   "input": "Gripper: tcp [0.688, -0.086, 0.164], opening 3%, holding: nothing (per last verified grasp).\nTime used: 19/450 s. Calls used: 3.",
+   "image": "frames/003.jpg",
+   "think": "The plate is flat (1.7 cm tall), so a top grasp in the middle may fail because the gripper can't close on anything. Better to grasp the rim/edge. Use edge=\"left\" or \"right\" with approach top.\n\nPlate center [0.695, -0.029]. Let's try edge=\"left\" (image left = -y side). Actually the gripper came to y=-0.086 which is left of center. Let's try edge=\"front\" or \"left\". I'll try edge=\"left\".",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"plate\", \"approach\": \"top\", \"edge\": \"left\"}}",
+   "result": "{\"code\": \"EMPTY_GRASP\", \"ok\": false, \"pose_err_cm\": 1.38, \"opening\": 0.025, \"regrasps\": 1, \"object_motion_cm\": {\"plate\": 2.0}}",
+   "result_ok": false,
+   "wall_t_start": 22.1,
+   "wall_t_end": 34.2
+  },
+  {
+   "t_start": 19.34,
+   "t_end": 25.56,
+   "input": "Gripper: tcp [0.703, -0.083, 0.019], opening 3%, holding: nothing (per last verified grasp).\nTime used: 34/450 s. Calls used: 4.",
+   "image": "frames/004.jpg",
+   "think": "The plate is thin (1.7 cm). Grasping the rim edge may be difficult. Let me try grasping the middle of the plate with top approach again — the first attempt had pose_err 16.73 cm which is odd. Maybe the plate moved. Let me locate again and try top grasp at center.\n\nActually the second attempt with edge=\"left\" had pose_err 1.38 cm but empty grasp — the gripper closed on nothing (opening 3%). The plate rim is thin; maybe the gripper fingers slipped off. Let me try edge=\"front\" or grasp the middle.\n\nLet me locate first.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"plate\"]}}",
+   "result": "{\"objects\": {\"plate\": {\"visible\": true, \"center\": [0.696, -0.021, 0.026], \"size\": [0.113, 0.087, 0.035], \"top_z\": 0.044}}}",
+   "result_ok": true,
+   "wall_t_start": 37.5,
+   "wall_t_end": 37.5
+  },
+  {
+   "t_start": 25.56,
+   "t_end": 30.14,
+   "input": "Gripper: tcp [0.703, -0.083, 0.019], opening 3%, holding: nothing (per last verified grasp).\nTime used: 37/450 s. Calls used: 5.",
+   "image": "frames/005.jpg",
+   "think": "The plate seems to have been nudged. The plate is now at [0.696, -0.021, 0.026] with size [0.113, 0.087, 0.035] — it may be tilted/leaning. Let me try grasping the middle top again now that it's re-located.\n\nActually the plate may be leaning against the bowl. Let me try top grasp at center.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"approach\": \"top\", \"object\": \"plate\"}}",
+   "result": "{\"code\": \"EMPTY_GRASP\", \"ok\": false, \"pose_err_cm\": 3.07, \"opening\": 0.025, \"regrasps\": 1, \"object_motion_cm\": {\"plate\": 2.3}}",
+   "result_ok": false,
+   "wall_t_start": 39.9,
+   "wall_t_end": 46.0
+  },
+  {
+   "t_start": 30.14,
+   "t_end": 39.14,
+   "input": "Gripper: tcp [0.697, -0.023, 0.019], opening 3%, holding: nothing (per last verified grasp).\nTime used: 46/450 s. Calls used: 6.",
+   "image": "frames/006.jpg",
+   "think": "The plate is thin (1.7 cm) and flat. Top grasp keeps failing. Maybe grasp with edge to catch the rim. The plate center is at [0.696, -0.021]. Let me try edge=\"front\" or \"back\" to grasp the rim.\n\nActually the plate seems to be lying flat on the table. A top-down grasp on a flat plate: fingers should close on the rim if the plate is small enough. Plate size 0.113 x 0.087 — small. The gripper opening 99% ~ maybe 8cm? Hmm, opening 0.025 means fingers closed nearly fully (2.5 cm?). Actually \"opening\": 0.025 means fingers closed to 2.5 cm? That's small. Hmm, but the gripper is 99% open at start.\n\nWait, the grasp attempts close fingers to 2.5 cm which is less than plate thickness 1.7cm... that means it's closing on nothing (fingers went past the plate). Actually if the plate is 1.7 cm thick and fingers close to 2.5 cm, they'd be around the plate but not on it.\n\nBetter: use edge grasp to catch the rim. Let me try edge=\"back\" (far side) or \"front\".\n\nActually maybe the issue is the plate is very flat and the gripper can't get purchase. Let's try edge grasp.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"approach\": \"top\", \"edge\": \"front\", \"object\": \"plate\"}}",
+   "result": "{\"code\": \"SLIPPED\", \"ok\": false, \"pose_err_cm\": 6.65, \"opening\": 0.323, \"rose_cm\": 2.4, \"gen_fail_post\": \"lowered back before opening\", \"regrasps\": 1, \"object_motion_cm\": {\"plate\": 2.3}}",
+   "result_ok": false,
+   "wall_t_start": 53.5,
+   "wall_t_end": 63.6
+  },
+  {
+   "t_start": 39.14,
+   "t_end": 43.37,
+   "input": "Gripper: tcp [0.743, -0.002, 0.070], opening 3%, holding: nothing (per last verified grasp).\nTime used: 64/450 s. Calls used: 7.",
+   "image": "frames/007.jpg",
+   "think": "The plate is a flat object with a rim. Grasping the rim seems to slip. Let me try grasping the rim on the left edge, or try the back edge. Actually the plate is thin (1.7cm) and flat. Maybe grasp the rim with edge=\"back\".\n\nLet me locate first.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"plate\"]}}",
+   "result": "{\"objects\": {\"plate\": {\"visible\": true, \"center\": [0.696, -0.044, 0.008], \"size\": [0.109, 0.117, 0.017], \"top_z\": 0.017}}}",
+   "result_ok": true,
+   "wall_t_start": 65.8,
+   "wall_t_end": 65.8
+  },
+  {
+   "t_start": 43.37,
+   "t_end": 51.75,
+   "input": "Gripper: tcp [0.743, -0.002, 0.070], opening 3%, holding: nothing (per last verified grasp).\nTime used: 66/450 s. Calls used: 8.",
+   "image": "frames/008.jpg",
+   "think": "The plate is a flat disc with a rim. Top grasp in the middle fails because the gripper can't close on nothing (plate is flat, no thickness to grasp). Edge grasp on rim should work. Let me try edge=\"back\" or \"front\" with top approach. Earlier edge=\"left\" gave EMPTY_GRASP with pose_err 1.38 — that's odd, fingers closed at 0.025 opening meaning nothing between. Hmm, edge grasp should grab the rim.\n\nMaybe the plate is too thin. Alternative: use approach from the side (e.g., approach \"left\") to grasp the plate's edge horizontally? That would push it.\n\nActually maybe better: the plate is a disc with a rim; grasp the rim with edge. Let's try edge=\"back\".\n\nAlternatively, the plate could be pushed onto the stove? Task says \"put the plate on the stove\" — pushing could work but imprecise.\n\nLet me try edge=\"back\" top grasp.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"approach\": \"top\", \"edge\": \"back\", \"object\": \"plate\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 5.63, \"opening\": 0.442, \"rose_cm\": 3.3, \"object_motion_cm\": {\"plate\": 3.7}}",
+   "result_ok": true,
+   "wall_t_start": 70.4,
+   "wall_t_end": 77.2
+  },
+  {
+   "t_start": 51.75,
+   "t_end": 55.35,
+   "input": "Gripper: tcp [0.655, -0.049, 0.064], opening 21%, holding: plate.\nTime used: 77/450 s. Calls used: 9.",
+   "image": "frames/009.jpg",
+   "think": "The plate is held. Now place it on the stove. Stove center [0.412, 0.21, 0.02], top_z 0.031.\n\nNote the plate is a flat disc; placing on stove should work.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"plate\", \"ref\": \"stove\", \"relation\": \"on\", \"gap_cm\": 1}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.02, \"object_motion_cm\": {\"plate\": 36.9, \"stove\": 0.7}, \"gen_post_release\": {\"target\": [0.412, 0.21, 0.057], \"object_now\": [0.447, 0.21, 0.028], \"bottom_z\": 0.026, \"jump_cm\": 3.5, \"over_ref\": true, \"placed_offset_cm\": [3.5, -0.0]}}",
+   "result_ok": true,
+   "wall_t_start": 80.2,
+   "wall_t_end": 85.8
+  },
+  {
+   "t_start": 55.35,
+   "t_end": 58.85,
+   "input": "Gripper: tcp [0.453, -0.001, 0.274], opening 100%, holding: nothing (per last verified grasp).\nTime used: 86/450 s. Calls used: 10.",
+   "image": "frames/010.jpg",
+   "think": "The plate is placed on the stove. Verify.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"on\", \"plate\", \"stove\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"on\", \"plate\", \"stove\"], \"ok\": true, \"why\": \"plate over stove: True; bottom 3 cm vs top 3 cm\"}]}",
+   "result_ok": true,
+   "wall_t_start": 86.8,
+   "wall_t_end": 86.9
+  }
+ ],
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "paper_ref": "Fig. 3 (R4)",
+ "playback_note": "One agent-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time."
+}

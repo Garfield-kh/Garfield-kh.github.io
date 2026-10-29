@@ -1,0 +1,130 @@
+{
+ "duration": 82.0,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 2.09
+  },
+  {
+   "label": "3 \u00b7 place (first divergence)",
+   "t": 4.19
+  },
+  {
+   "label": "4 \u00b7 locate / done",
+   "t": 8.28
+  },
+  {
+   "label": "5 \u00b7 grasp / \u2014",
+   "t": 10.89
+  },
+  {
+   "label": "6 \u00b7 place / \u2014",
+   "t": 13.5
+  },
+  {
+   "label": "7 \u00b7 locate / \u2014",
+   "t": 16.11
+  },
+  {
+   "label": "8 \u00b7 home / \u2014",
+   "t": 18.2
+  },
+  {
+   "label": "9 \u00b7 locate / \u2014",
+   "t": 20.81
+  },
+  {
+   "label": "10 \u00b7 grasp / \u2014",
+   "t": 23.42
+  },
+  {
+   "label": "11 \u00b7 home / \u2014",
+   "t": 26.03
+  },
+  {
+   "label": "12 \u00b7 locate / \u2014",
+   "t": 28.45
+  },
+  {
+   "label": "13 \u00b7 grasp / \u2014",
+   "t": 30.75
+  },
+  {
+   "label": "14 \u00b7 grasp / \u2014",
+   "t": 33.36
+  },
+  {
+   "label": "15 \u00b7 home / \u2014",
+   "t": 35.97
+  },
+  {
+   "label": "16 \u00b7 locate / \u2014",
+   "t": 38.65
+  },
+  {
+   "label": "17 \u00b7 push / \u2014",
+   "t": 41.26
+  },
+  {
+   "label": "18 \u00b7 release / \u2014",
+   "t": 43.87
+  },
+  {
+   "label": "19 \u00b7 push / \u2014",
+   "t": 45.97
+  },
+  {
+   "label": "20 \u00b7 release / \u2014",
+   "t": 48.58
+  },
+  {
+   "label": "21 \u00b7 grasp / \u2014",
+   "t": 51.19
+  },
+  {
+   "label": "22 \u00b7 grasp / \u2014",
+   "t": 53.8
+  },
+  {
+   "label": "23 \u00b7 move / \u2014",
+   "t": 56.41
+  },
+  {
+   "label": "24 \u00b7 grasp / \u2014",
+   "t": 59.01
+  },
+  {
+   "label": "25 \u00b7 locate / \u2014",
+   "t": 61.11
+  },
+  {
+   "label": "26 \u00b7 move / \u2014",
+   "t": 63.2
+  },
+  {
+   "label": "27 \u00b7 grasp / \u2014",
+   "t": 65.81
+  },
+  {
+   "label": "28 \u00b7 grasp / \u2014",
+   "t": 67.9
+  },
+  {
+   "label": "29 \u00b7 move / \u2014",
+   "t": 70.16
+  },
+  {
+   "label": "30 \u00b7 done / \u2014",
+   "t": 72.77
+  },
+  {
+   "label": "Summary",
+   "t": 75.5
+  }
+ ],
+ "frames": 2460
+}

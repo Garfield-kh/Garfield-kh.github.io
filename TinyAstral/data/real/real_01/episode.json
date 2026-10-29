@@ -1,0 +1,128 @@
+{
+ "id": "real_01",
+ "title": "Two balls into matching boxes",
+ "benchmark": "Real robot",
+ "split": "real",
+ "instruction": "Put the pink ball into the pink box, and then put the blue ball into the blue box.",
+ "model": "TinyAstral-4B",
+ "outcome": "success",
+ "end_reason": "halted",
+ "wall_seconds": 328.8,
+ "source": "real-robot inference log",
+ "steps": [
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.171, 0.002, 0.042], opening 100%, holding: nothing (per last verified grasp).\nTime used: 0/800 s. Calls used: 0.",
+   "think": "I need to locate the objects first to understand the scene layout.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"pink ball\", \"blue ball\", \"pink box\", \"blue box\"]}}",
+   "result": "{\"objects\": {\"pink ball\": {\"visible\": true, \"center\": [0.257, -0.046, 0.029], \"size\": [0.07, 0.066, 0.057]}, \"blue ball\": {\"visible\": true, \"center\": [0.244, 0.077, 0.026], \"size\": [0.057, 0.054, 0.047]}, \"pink box\": {\"visible\": true, \"center\": [0.166, 0.177, 0.038], \"size\": [0.111, 0.11, 0.046]}, \"blue box\": {\"visible\": true, \"center\": [0.174, -0.18, 0.033], \"size\": [0.099, 0.097, 0.053]}}}",
+   "wall_t_start": 1.981,
+   "wall_t_end": 34.789,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.171, 0.002, 0.042], opening 100%, holding: nothing (per last verified grasp).\nTime used: 35/800 s. Calls used: 1.",
+   "think": "The pink ball is at [0.257, -0.046, 0.029]. The pink box is at [0.166, 0.177, 0.038]. I need to grasp the pink ball and place it into the pink box.\n\nLet me grasp the pink ball from the top.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"pink ball\", \"approach\": \"top\"}}",
+   "result": "{\"code\": \"HELD_UNVERIFIED\", \"ok\": false, \"held\": true, \"object\": \"pink ball\", \"why\": \"Post-grasp pose verification: J4=95.2° exceeds URDF limit [-95.0, 95.0]; the gripper still reports this object held. Verify or place it before grasping again.\"}",
+   "wall_t_start": 37.726,
+   "wall_t_end": 87.604,
+   "result_ok": false
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.254, -0.003, 0.082], opening 98%, holding: pink ball.\nTime used: 88/800 s. Calls used: 2.",
+   "think": "The grasp reports HELD_UNVERIFIED but the gripper reports holding pink ball. The image shows the pink ball held in the gripper. Let's lift and place it into the pink box.",
+   "tool_call": "{\"name\": \"lift\", \"arguments\": {\"height_cm\": 15}}",
+   "result": "{\"code\": \"OK\", \"tcp_z\": 0.082}",
+   "wall_t_start": 90.487,
+   "wall_t_end": 90.493,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.254, -0.003, 0.082], opening 98%, holding: pink ball.\nTime used: 91/800 s. Calls used: 3.",
+   "think": "The pink ball is held. Now place it into the pink box.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"pink ball\", \"ref\": \"pink box\", \"relation\": \"in\", \"gap_cm\": 3}}",
+   "result": "{\"code\": \"PLAN_FAIL\", \"ok\": false, \"released\": false, \"why\": \"Container motion stopped; holding state retained until a confirmed release\"}",
+   "wall_t_start": 93.419,
+   "wall_t_end": 140.804,
+   "result_ok": false
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.135, 0.202, 0.186], opening 98%, holding: pink ball.\nTime used: 141/800 s. Calls used: 4.",
+   "think": "The place failed with PLAN_FAIL but the gripper moved to [0.135, 0.202, 0.186] which is above the pink box area. It says holding state retained until a confirmed release. Let me try releasing here and see if the ball drops into the box.\n\nActually the gripper is at z=0.186, quite high. Let me just release and check.",
+   "tool_call": "{\"name\": \"release\", \"arguments\": {}}",
+   "result": "{\"code\": \"RETREAT_FAILED\", \"ok\": false, \"released\": true, \"object\": \"pink ball\", \"ref\": \"pink box\", \"executor\": \"container_release\", \"fingers_extracted_upward\": false}",
+   "wall_t_start": 144.514,
+   "wall_t_end": 151.672,
+   "result_ok": false
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.135, 0.202, 0.186], opening 100%, holding: nothing (per last verified grasp).\nTime used: 152/800 s. Calls used: 5.",
+   "think": "The pink ball appears to be inside the pink box now (image shows it in the box). Let me verify with a check.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"in\", \"pink ball\", \"pink box\"]]}}",
+   "result": "{\"all_pass\": false, \"checks\": [{\"check\": [\"in\", \"pink ball\", \"pink box\"], \"ok\": null, \"why\": \"cannot see the pink box\"}]}",
+   "wall_t_start": 154.778,
+   "wall_t_end": 157.078,
+   "result_ok": false
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.135, 0.202, 0.186], opening 100%, holding: nothing (per last verified grasp).\nTime used: 157/800 s. Calls used: 6.",
+   "think": "The pink ball appears to be inside the pink box (visible in the wrist camera and image 3). The verify couldn't see the pink box because the arm occludes it. Let me home the arm first, then verify.",
+   "tool_call": "{\"name\": \"home\", \"arguments\": {}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"object_motion_cm\": {}}",
+   "wall_t_start": 160.134,
+   "wall_t_end": 184.052,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.170, 0.002, 0.041], opening 100%, holding: nothing (per last verified grasp).\nTime used: 184/800 s. Calls used: 7.",
+   "think": "The pink ball is in the pink box (visible in image 1 and 3). Now grasp the blue ball and place it in the blue box.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"approach\": \"top\", \"object\": \"blue ball\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 4.9, \"opening\": 0.69, \"rose_cm\": 5.0, \"object_motion_cm\": {\"blue ball\": 5.0}}",
+   "wall_t_start": 187.108,
+   "wall_t_end": 237.662,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.212, 0.102, 0.082], opening 69%, holding: blue ball.\nTime used: 238/800 s. Calls used: 8.",
+   "think": "Blue ball is held. Now place it into the blue box. Blue box is at [0.174, -0.18, 0.033].",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"gap_cm\": 3, \"object\": \"blue ball\", \"ref\": \"blue box\", \"relation\": \"in\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"released\": true, \"executor\": \"container_place\", \"rim_height_mm\": 60.3, \"carry_clearance_mm\": 30.0, \"grasp_to_object_extent_mm\": 83.7, \"pitch_deg\": 55.0, \"fingers_extracted_upward\": true}",
+   "wall_t_start": 241.005,
+   "wall_t_end": 323.407,
+   "result_ok": true
+  },
+  {
+   "t_start": null,
+   "t_end": null,
+   "input": "Gripper: tcp [0.199, -0.153, 0.173], opening 100%, holding: nothing (per last verified grasp).\nTime used: 323/800 s. Calls used: 9.",
+   "think": "Both balls are now in their respective boxes. Let me verify with done checks.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"in\", \"pink ball\", \"pink box\"], [\"in\", \"blue ball\", \"blue box\"]]}}",
+   "result": "{\"code\": \"HALTED\", \"ok\": false, \"detail\": \"Stopped by user\"}",
+   "wall_t_start": 326.786,
+   "wall_t_end": 328.804,
+   "result_ok": null
+  }
+ ],
+ "outcome_label": "Task success (human-judged)",
+ "page_caption": "TinyAstral-4B closed loop on a real SO-ARM101 arm, 10 model calls: it locates the objects, grasps and lifts the pink ball, releases it above the pink box, homes the arm, then grasps the blue ball and places it in the blue box. The operator stopped the run at the final done call and judged it a success. Arm motion is fast-forwarded (speed shown on the video).",
+ "page_speed": "partly fast-forwarded",
+ "planner_note": "Each call the planner sees front, wrist and side camera images (+ depth) and the robot state, and returns exactly one tool call."
+}

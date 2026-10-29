@@ -1,0 +1,108 @@
+{
+ "id": "simplerenv_coke_h_0038",
+ "title": "Rejected done, lifts higher",
+ "benchmark": "SimplerEnv",
+ "split": "zero-shot",
+ "instruction": "pick coke can",
+ "model": "TinyAstral-4B",
+ "harness": "H* (final)",
+ "outcome": "success",
+ "recovered": true,
+ "caption": "5 tool calls; 1 failed tool result or check before the task succeeded.",
+ "call_limit": null,
+ "end_reason": "model_done",
+ "wall_seconds": 10.4,
+ "duration": 23.16,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/p0_000.jpg"
+  },
+  {
+   "t": 3.99,
+   "src": "frames/p0_001.jpg"
+  },
+  {
+   "t": 8.61,
+   "src": "frames/p0_002.jpg"
+  },
+  {
+   "t": 12.92,
+   "src": "frames/p0_003.jpg"
+  },
+  {
+   "t": 16.66,
+   "src": "frames/p0_004.jpg"
+  },
+  {
+   "t": 20.16,
+   "src": "frames/final.jpg",
+   "label": "final state"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 3.99,
+   "input": "Task: pick coke can",
+   "image": "frames/p0_000.jpg",
+   "think": "The task is to pick up the coke can. I can see a red coke can lying on the table. I need to grasp it first. The can appears to be lying on its side on the table surface. Let me start by grasping the coke can.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"coke can\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 5.48, \"opening\": 0.286, \"rose_cm\": 4.3, \"object_motion_cm\": {\"coke can\": 4.2}}",
+   "result_ok": true,
+   "wall_t_start": 0.7,
+   "wall_t_end": 3.4
+  },
+  {
+   "t_start": 3.99,
+   "t_end": 8.61,
+   "input": "",
+   "image": "frames/p0_001.jpg",
+   "think": "The grasp succeeded with code OK, and the gripper is holding the coke can. The task is to pick up the coke can, which means holding it at least 12 cm above the table. The current height is 8.1 cm, so I need to lift it higher. The next step is to lift to 13 cm to satisfy the \"pick up\" requirement.",
+   "tool_call": "{\"name\": \"lift\", \"arguments\": {\"height_cm\": 13}}",
+   "result": "{\"code\": \"OK\", \"tcp_z\": 0.119}",
+   "result_ok": true,
+   "wall_t_start": 4.3,
+   "wall_t_end": 4.6
+  },
+  {
+   "t_start": 8.61,
+   "t_end": 12.92,
+   "input": "",
+   "image": "frames/p0_002.jpg",
+   "think": "The can is held at 11.9 cm above the table. The task is to pick up the coke can, which means holding it at least 12 cm above the table. The lift was 13 cm, but the reported tcp_z is 0.119 m = 11.9 cm. That's essentially 12 cm. Let me verify with a check.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"holding\", \"coke can\"], [\"lifted\", \"coke can\", 12]]}}",
+   "result": "{\"all_pass\": false, \"checks\": [{\"check\": [\"holding\", \"coke can\"], \"ok\": true, \"why\": \"gripper width 2.3 cm, tcp inside its box\"}, {\"check\": [\"lifted\", \"coke can\", 12], \"ok\": false, \"why\": \"holding: True; gripper 12 cm above the table\"}]}",
+   "result_ok": false,
+   "wall_t_start": 5.7,
+   "wall_t_end": 6.1
+  },
+  {
+   "t_start": 12.92,
+   "t_end": 16.66,
+   "input": "",
+   "image": "frames/p0_003.jpg",
+   "think": "The lift check says gripper 12 cm above table but ok=false. The tcp_z is 0.119 which is 11.9 cm. Maybe the check requires exactly 12 or more. Let me lift higher, e.g. 15 cm.",
+   "tool_call": "{\"name\": \"lift\", \"arguments\": {\"height_cm\": 15}}",
+   "result": "{\"code\": \"OK\", \"tcp_z\": 0.14}",
+   "result_ok": true,
+   "wall_t_start": 6.8,
+   "wall_t_end": 7.0
+  },
+  {
+   "t_start": 16.66,
+   "t_end": 20.16,
+   "input": "",
+   "image": "frames/p0_004.jpg",
+   "think": "The can is held horizontally (lying on its side) in the gripper. The lift check failed at 12 cm. Now at 14 cm. Let's try done again.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"holding\", \"coke can\"], [\"lifted\", \"coke can\", 12]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"holding\", \"coke can\"], \"ok\": true, \"why\": \"gripper width 2.3 cm, tcp inside its box\"}, {\"check\": [\"lifted\", \"coke can\", 12], \"ok\": true, \"why\": \"holding: True; gripper 14 cm above the table\"}]}",
+   "result_ok": true,
+   "wall_t_start": 7.8,
+   "wall_t_end": 8.0
+  }
+ ],
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "paper_ref": "Supp. Fig. A (S3)",
+ "playback_note": "One agent-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time."
+}

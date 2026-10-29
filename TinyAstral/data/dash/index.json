@@ -1,0 +1,1960 @@
+[
+ {
+  "id": "robotwin_place_bread_skillet",
+  "type": "sim",
+  "benchmark": "RoboTwin",
+  "title": "A height check triggers a corrective lift",
+  "outcome": "success",
+  "duration": 54.63,
+  "file": "robotwin_place_bread_skillet.mp4",
+  "file_960": "robotwin_place_bread_skillet_960.mp4",
+  "cover": "robotwin_place_bread_skillet.jpg",
+  "video": "data/dash/robotwin_place_bread_skillet.mp4",
+  "video_960": "data/dash/robotwin_place_bread_skillet_960.mp4",
+  "poster": "data/dash/robotwin_place_bread_skillet.jpg",
+  "size_mb": 3.81,
+  "size_960_mb": 1.11,
+  "chapters": [
+   {
+    "label": "1 · grasp",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · carry",
+    "t": 7.31,
+    "kind": "step"
+   },
+   {
+    "label": "3 · grasp",
+    "t": 12.15,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 17.16,
+    "kind": "step"
+   },
+   {
+    "label": "5 · home",
+    "t": 21.42,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 27.33,
+    "kind": "step"
+   },
+   {
+    "label": "7 · lift",
+    "t": 32.46,
+    "kind": "step"
+   },
+   {
+    "label": "8 · verify",
+    "t": 38.97,
+    "kind": "step"
+   },
+   {
+    "label": "9 · done",
+    "t": 44.48,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 48.13,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "robotwin_place_object_basket",
+  "type": "sim",
+  "benchmark": "RoboTwin",
+  "title": "Switches arm, then grasp point",
+  "outcome": "success",
+  "duration": 72.98,
+  "file": "robotwin_place_object_basket.mp4",
+  "file_960": "robotwin_place_object_basket_960.mp4",
+  "cover": "robotwin_place_object_basket.jpg",
+  "video": "data/dash/robotwin_place_object_basket.mp4",
+  "video_960": "data/dash/robotwin_place_object_basket_960.mp4",
+  "poster": "data/dash/robotwin_place_object_basket.jpg",
+  "size_mb": 4.71,
+  "size_960_mb": 1.32,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · locate",
+    "t": 5.57,
+    "kind": "step"
+   },
+   {
+    "label": "3 · grasp",
+    "t": 11.61,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 16.02,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp",
+    "t": 21.16,
+    "kind": "step"
+   },
+   {
+    "label": "6 · grasp",
+    "t": 30.22,
+    "kind": "step"
+   },
+   {
+    "label": "7 · grasp",
+    "t": 38.01,
+    "kind": "step"
+   },
+   {
+    "label": "8 · move",
+    "t": 44.13,
+    "kind": "step"
+   },
+   {
+    "label": "9 · verify",
+    "t": 52.85,
+    "kind": "step"
+   },
+   {
+    "label": "10 · done",
+    "t": 62.33,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 66.48,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "guava_set_table",
+  "type": "sim",
+  "benchmark": "Guava",
+  "title": "Notices a knocked-off bowl and restores it",
+  "outcome": "success",
+  "duration": 82.0,
+  "file": "guava_set_table.mp4",
+  "file_960": "guava_set_table_960.mp4",
+  "cover": "guava_set_table.jpg",
+  "video": "data/dash/guava_set_table.mp4",
+  "video_960": "data/dash/guava_set_table_960.mp4",
+  "poster": "data/dash/guava_set_table.jpg",
+  "size_mb": 4.53,
+  "size_960_mb": 1.35,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 5.22,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 12.67,
+    "kind": "step"
+   },
+   {
+    "label": "4 · verify",
+    "t": 16.77,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp",
+    "t": 24.96,
+    "kind": "step"
+   },
+   {
+    "label": "6 · locate",
+    "t": 30.36,
+    "kind": "step"
+   },
+   {
+    "label": "7 · place",
+    "t": 37.41,
+    "kind": "step"
+   },
+   {
+    "label": "8 · verify",
+    "t": 44.12,
+    "kind": "step"
+   },
+   {
+    "label": "9 · grasp",
+    "t": 52.3,
+    "kind": "step"
+   },
+   {
+    "label": "10 · place",
+    "t": 60.93,
+    "kind": "step"
+   },
+   {
+    "label": "11 · verify",
+    "t": 66.56,
+    "kind": "step"
+   },
+   {
+    "label": "12 · done",
+    "t": 71.1,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "guava_shell_game",
+  "type": "sim",
+  "benchmark": "Guava",
+  "title": "Moves an occluder to reveal the target",
+  "outcome": "success",
+  "duration": 64.27,
+  "file": "guava_shell_game.mp4",
+  "file_960": "guava_shell_game_960.mp4",
+  "cover": "guava_shell_game.jpg",
+  "video": "data/dash/guava_shell_game.mp4",
+  "video_960": "data/dash/guava_shell_game_960.mp4",
+  "poster": "data/dash/guava_shell_game.jpg",
+  "size_mb": 3.41,
+  "size_960_mb": 1.01,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · locate",
+    "t": 5.36,
+    "kind": "step"
+   },
+   {
+    "label": "3 · grasp",
+    "t": 14.59,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 24.09,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp",
+    "t": 31.22,
+    "kind": "step"
+   },
+   {
+    "label": "6 · lift",
+    "t": 36.71,
+    "kind": "step"
+   },
+   {
+    "label": "7 · verify",
+    "t": 41.39,
+    "kind": "step"
+   },
+   {
+    "label": "8 · done",
+    "t": 49.75,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 57.77,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "liberopro_t141_s1",
+  "type": "sim",
+  "benchmark": "LIBERO-PRO",
+  "title": "Switches grasp point between grasp attempts",
+  "outcome": "success",
+  "duration": 82.0,
+  "file": "liberopro_t141_s1.mp4",
+  "file_960": "liberopro_t141_s1_960.mp4",
+  "cover": "liberopro_t141_s1.jpg",
+  "video": "data/dash/liberopro_t141_s1.mp4",
+  "video_960": "data/dash/liberopro_t141_s1_960.mp4",
+  "poster": "data/dash/liberopro_t141_s1.jpg",
+  "size_mb": 4.35,
+  "size_960_mb": 1.34,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 4.69,
+    "kind": "step"
+   },
+   {
+    "label": "3 · locate",
+    "t": 11.82,
+    "kind": "step"
+   },
+   {
+    "label": "4 · grasp",
+    "t": 19.94,
+    "kind": "step"
+   },
+   {
+    "label": "5 · locate",
+    "t": 27.95,
+    "kind": "step"
+   },
+   {
+    "label": "6 · grasp",
+    "t": 36.06,
+    "kind": "step"
+   },
+   {
+    "label": "7 · grasp",
+    "t": 43.07,
+    "kind": "step"
+   },
+   {
+    "label": "8 · locate",
+    "t": 51.85,
+    "kind": "step"
+   },
+   {
+    "label": "9 · grasp",
+    "t": 57.68,
+    "kind": "step"
+   },
+   {
+    "label": "10 · place",
+    "t": 66.46,
+    "kind": "step"
+   },
+   {
+    "label": "11 · done",
+    "t": 71.8,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "liberopro_t13_s0",
+  "type": "sim",
+  "benchmark": "LIBERO-PRO",
+  "title": "Picks the right one of two identical bowls",
+  "outcome": "success",
+  "duration": 40.64,
+  "file": "liberopro_t13_s0.mp4",
+  "file_960": "liberopro_t13_s0_960.mp4",
+  "cover": "liberopro_t13_s0.jpg",
+  "video": "data/dash/liberopro_t13_s0.mp4",
+  "video_960": "data/dash/liberopro_t13_s0_960.mp4",
+  "poster": "data/dash/liberopro_t13_s0.jpg",
+  "size_mb": 2.32,
+  "size_960_mb": 0.66,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · inspect",
+    "t": 7.75,
+    "kind": "step"
+   },
+   {
+    "label": "3 · grasp",
+    "t": 17.06,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 25.36,
+    "kind": "step"
+   },
+   {
+    "label": "5 · done",
+    "t": 30.02,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 34.14,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "simplerenv_br_eggplant_0003",
+  "type": "sim",
+  "benchmark": "SimplerEnv",
+  "title": "Re-describes an unseen object",
+  "outcome": "success",
+  "duration": 51.15,
+  "file": "simplerenv_br_eggplant_0003.mp4",
+  "file_960": "simplerenv_br_eggplant_0003_960.mp4",
+  "cover": "simplerenv_br_eggplant_0003.jpg",
+  "video": "data/dash/simplerenv_br_eggplant_0003.mp4",
+  "video_960": "data/dash/simplerenv_br_eggplant_0003_960.mp4",
+  "poster": "data/dash/simplerenv_br_eggplant_0003.jpg",
+  "size_mb": 2.88,
+  "size_960_mb": 0.84,
+  "chapters": [
+   {
+    "label": "1 · grasp",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · locate",
+    "t": 6.46,
+    "kind": "step"
+   },
+   {
+    "label": "3 · locate",
+    "t": 12.36,
+    "kind": "step"
+   },
+   {
+    "label": "4 · locate",
+    "t": 17.98,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp",
+    "t": 23.45,
+    "kind": "step"
+   },
+   {
+    "label": "6 · place",
+    "t": 32.95,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done",
+    "t": 40.15,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 44.65,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "simplerenv_coke_h_0038",
+  "type": "sim",
+  "benchmark": "SimplerEnv",
+  "title": "Rejected done, lifts higher",
+  "outcome": "success",
+  "duration": 39.02,
+  "file": "simplerenv_coke_h_0038.mp4",
+  "file_960": "simplerenv_coke_h_0038_960.mp4",
+  "cover": "simplerenv_coke_h_0038.jpg",
+  "video": "data/dash/simplerenv_coke_h_0038.mp4",
+  "video_960": "data/dash/simplerenv_coke_h_0038_960.mp4",
+  "poster": "data/dash/simplerenv_coke_h_0038.jpg",
+  "size_mb": 2.13,
+  "size_960_mb": 0.59,
+  "chapters": [
+   {
+    "label": "1 · grasp",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · lift",
+    "t": 6.85,
+    "kind": "step"
+   },
+   {
+    "label": "3 · done",
+    "t": 14.24,
+    "kind": "step"
+   },
+   {
+    "label": "4 · lift",
+    "t": 21.13,
+    "kind": "step"
+   },
+   {
+    "label": "5 · done",
+    "t": 27.06,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 32.52,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "vlabench_select_nth_largest_poker_e00",
+  "type": "sim",
+  "benchmark": "VLABench",
+  "title": "Renames, inspects, ranks the cards",
+  "outcome": "success",
+  "duration": 41.2,
+  "file": "vlabench_select_nth_largest_poker_e00.mp4",
+  "file_960": "vlabench_select_nth_largest_poker_e00_960.mp4",
+  "cover": "vlabench_select_nth_largest_poker_e00.jpg",
+  "video": "data/dash/vlabench_select_nth_largest_poker_e00.mp4",
+  "video_960": "data/dash/vlabench_select_nth_largest_poker_e00_960.mp4",
+  "poster": "data/dash/vlabench_select_nth_largest_poker_e00.jpg",
+  "size_mb": 2.29,
+  "size_960_mb": 0.66,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · locate",
+    "t": 4.63,
+    "kind": "step"
+   },
+   {
+    "label": "3 · inspect",
+    "t": 8.96,
+    "kind": "step"
+   },
+   {
+    "label": "4 · grasp",
+    "t": 18.27,
+    "kind": "step"
+   },
+   {
+    "label": "5 · lift",
+    "t": 25.39,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 34.7,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "vlabench_add_condiment_e02",
+  "type": "sim",
+  "benchmark": "VLABench",
+  "title": "Adds hot sauce to the dish",
+  "outcome": "success",
+  "duration": 69.55,
+  "file": "vlabench_add_condiment_e02.mp4",
+  "file_960": "vlabench_add_condiment_e02_960.mp4",
+  "cover": "vlabench_add_condiment_e02.jpg",
+  "video": "data/dash/vlabench_add_condiment_e02.mp4",
+  "video_960": "data/dash/vlabench_add_condiment_e02_960.mp4",
+  "poster": "data/dash/vlabench_add_condiment_e02.jpg",
+  "size_mb": 3.8,
+  "size_960_mb": 1.13,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 8.53,
+    "kind": "step"
+   },
+   {
+    "label": "3 · lift",
+    "t": 18.03,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 26.23,
+    "kind": "step"
+   },
+   {
+    "label": "5 · locate",
+    "t": 31.19,
+    "kind": "step"
+   },
+   {
+    "label": "6 · grasp",
+    "t": 37.71,
+    "kind": "step"
+   },
+   {
+    "label": "7 · lift",
+    "t": 47.21,
+    "kind": "step"
+   },
+   {
+    "label": "8 · place",
+    "t": 56.52,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 63.05,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "eb_common_sense_ep006",
+  "type": "sim",
+  "benchmark": "EB-Manipulation",
+  "title": "Re-describes the target by shape",
+  "outcome": "success",
+  "duration": 57.77,
+  "file": "eb_common_sense_ep006.mp4",
+  "file_960": "eb_common_sense_ep006_960.mp4",
+  "cover": "eb_common_sense_ep006.jpg",
+  "video": "data/dash/eb_common_sense_ep006.mp4",
+  "video_960": "data/dash/eb_common_sense_ep006_960.mp4",
+  "poster": "data/dash/eb_common_sense_ep006.jpg",
+  "size_mb": 3.83,
+  "size_960_mb": 1.06,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · locate",
+    "t": 8.63,
+    "kind": "step"
+   },
+   {
+    "label": "3 · grasp",
+    "t": 16.62,
+    "kind": "step"
+   },
+   {
+    "label": "4 · lift",
+    "t": 25.12,
+    "kind": "step"
+   },
+   {
+    "label": "5 · place",
+    "t": 33.01,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 37.94,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done",
+    "t": 45.97,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 51.27,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s1_task_note_goal_before",
+  "type": "story",
+  "story": "s1_task_note_goal",
+  "side": "before",
+  "benchmark": "RoboTwin",
+  "title": "Before (H1): moves the card 13 cm and declares done",
+  "outcome": "failure",
+  "versions": "H1 → H3",
+  "duration": 32.7,
+  "file": "s1_task_note_goal_before.mp4",
+  "file_960": "s1_task_note_goal_before_960.mp4",
+  "cover": "s1_task_note_goal_before.jpg",
+  "video": "data/dash/s1_task_note_goal_before.mp4",
+  "video_960": "data/dash/s1_task_note_goal_before_960.mp4",
+  "poster": "data/dash/s1_task_note_goal_before.jpg",
+  "size_mb": 2.18,
+  "size_960_mb": 0.61,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 7.8,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 14.01,
+    "kind": "step"
+   },
+   {
+    "label": "4 · done",
+    "t": 21.64,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 26.2,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s1_task_note_goal_after",
+  "type": "story",
+  "story": "s1_task_note_goal",
+  "side": "after",
+  "benchmark": "RoboTwin",
+  "title": "After (H3): the task note says how far, so the card goes 30 cm outward",
+  "outcome": "success",
+  "versions": "H1 → H3",
+  "duration": 30.51,
+  "file": "s1_task_note_goal_after.mp4",
+  "file_960": "s1_task_note_goal_after_960.mp4",
+  "cover": "s1_task_note_goal_after.jpg",
+  "video": "data/dash/s1_task_note_goal_after.mp4",
+  "video_960": "data/dash/s1_task_note_goal_after_960.mp4",
+  "poster": "data/dash/s1_task_note_goal_after.jpg",
+  "size_mb": 1.96,
+  "size_960_mb": 0.54,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 6.2,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 11.51,
+    "kind": "step"
+   },
+   {
+    "label": "4 · done",
+    "t": 18.41,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 24.01,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s1_task_note_goal_compare",
+  "type": "compare",
+  "story": "s1_task_note_goal",
+  "benchmark": "RoboTwin",
+  "title": "H1 → H3 · Knowing what “done” means",
+  "versions": "H1 → H3",
+  "duration": 33.02,
+  "file": "s1_task_note_goal_compare.mp4",
+  "file_960": "s1_task_note_goal_compare_960.mp4",
+  "cover": "s1_task_note_goal_compare.jpg",
+  "video": "data/dash/s1_task_note_goal_compare.mp4",
+  "video_960": "data/dash/s1_task_note_goal_compare_960.mp4",
+  "poster": "data/dash/s1_task_note_goal_compare.jpg",
+  "size_mb": 1.69,
+  "size_960_mb": 0.48,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 7.02,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place (first divergence)",
+    "t": 12.61,
+    "kind": "diverge"
+   },
+   {
+    "label": "4 · done",
+    "t": 21.48,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 26.52,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s2_face_now_before",
+  "type": "story",
+  "story": "s2_face_now",
+  "side": "before",
+  "benchmark": "RoboTwin",
+  "title": "Before (H7): a fixed -90 deg turn leaves the QR side facing the wrong way",
+  "outcome": "failure",
+  "versions": "H7 → H12",
+  "duration": 67.79,
+  "file": "s2_face_now_before.mp4",
+  "file_960": "s2_face_now_before_960.mp4",
+  "cover": "s2_face_now_before.jpg",
+  "video": "data/dash/s2_face_now_before.mp4",
+  "video_960": "data/dash/s2_face_now_before_960.mp4",
+  "poster": "data/dash/s2_face_now_before.jpg",
+  "size_mb": 3.97,
+  "size_960_mb": 1.14,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 6.71,
+    "kind": "step"
+   },
+   {
+    "label": "3 · handover",
+    "t": 15.77,
+    "kind": "step"
+   },
+   {
+    "label": "4 · home",
+    "t": 25.27,
+    "kind": "step"
+   },
+   {
+    "label": "5 · place",
+    "t": 34.33,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 43.39,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done",
+    "t": 52.89,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 61.29,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s2_face_now_after",
+  "type": "story",
+  "story": "s2_face_now",
+  "side": "after",
+  "benchmark": "RoboTwin",
+  "title": "After (H12): face=\"front\", face_now=\"back\" turns the QR side 178 deg to the robot",
+  "outcome": "success",
+  "versions": "H7 → H12",
+  "duration": 44.93,
+  "file": "s2_face_now_after.mp4",
+  "file_960": "s2_face_now_after_960.mp4",
+  "cover": "s2_face_now_after.jpg",
+  "video": "data/dash/s2_face_now_after.mp4",
+  "video_960": "data/dash/s2_face_now_after_960.mp4",
+  "poster": "data/dash/s2_face_now_after.jpg",
+  "size_mb": 2.61,
+  "size_960_mb": 0.74,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 5.79,
+    "kind": "step"
+   },
+   {
+    "label": "3 · lift",
+    "t": 14.85,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 23.91,
+    "kind": "step"
+   },
+   {
+    "label": "5 · done",
+    "t": 32.98,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 38.43,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s2_face_now_compare",
+  "type": "compare",
+  "story": "s2_face_now",
+  "benchmark": "RoboTwin",
+  "title": "H7 → H12 · Turning the right side to face the robot",
+  "versions": "H7 → H12",
+  "duration": 63.56,
+  "file": "s2_face_now_compare.mp4",
+  "file_960": "s2_face_now_compare_960.mp4",
+  "cover": "s2_face_now_compare.jpg",
+  "video": "data/dash/s2_face_now_compare.mp4",
+  "video_960": "data/dash/s2_face_now_compare_960.mp4",
+  "poster": "data/dash/s2_face_now_compare.jpg",
+  "size_mb": 2.65,
+  "size_960_mb": 0.8,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 6.04,
+    "kind": "step"
+   },
+   {
+    "label": "3 · handover / lift (first divergence)",
+    "t": 14.19,
+    "kind": "diverge"
+   },
+   {
+    "label": "4 · home / place",
+    "t": 24.69,
+    "kind": "step"
+   },
+   {
+    "label": "5 · place / done",
+    "t": 32.85,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify / —",
+    "t": 41.0,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done / —",
+    "t": 49.5,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 57.06,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s3_slim_grasp_before",
+  "type": "story",
+  "story": "s3_slim_grasp",
+  "side": "before",
+  "benchmark": "RoboTwin",
+  "title": "Before (H15): a tilted grasp tips the right bottle over",
+  "outcome": "failure",
+  "versions": "H15 → H16",
+  "duration": 82.0,
+  "file": "s3_slim_grasp_before.mp4",
+  "file_960": "s3_slim_grasp_before_960.mp4",
+  "cover": "s3_slim_grasp_before.jpg",
+  "video": "data/dash/s3_slim_grasp_before.mp4",
+  "video_960": "data/dash/s3_slim_grasp_before_960.mp4",
+  "poster": "data/dash/s3_slim_grasp_before.jpg",
+  "size_mb": 5.35,
+  "size_960_mb": 1.59,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · bimanual",
+    "t": 6.68,
+    "kind": "step"
+   },
+   {
+    "label": "3 · bimanual",
+    "t": 11.19,
+    "kind": "step"
+   },
+   {
+    "label": "4 · bimanual",
+    "t": 14.93,
+    "kind": "step"
+   },
+   {
+    "label": "5 · bimanual",
+    "t": 21.61,
+    "kind": "step"
+   },
+   {
+    "label": "6 · bimanual",
+    "t": 27.58,
+    "kind": "step"
+   },
+   {
+    "label": "7 · bimanual",
+    "t": 31.61,
+    "kind": "step"
+   },
+   {
+    "label": "8 · bimanual",
+    "t": 38.29,
+    "kind": "step"
+   },
+   {
+    "label": "9 · move",
+    "t": 44.02,
+    "kind": "step"
+   },
+   {
+    "label": "10 · bimanual",
+    "t": 50.11,
+    "kind": "step"
+   },
+   {
+    "label": "11 · bimanual",
+    "t": 56.79,
+    "kind": "step"
+   },
+   {
+    "label": "12 · verify",
+    "t": 63.47,
+    "kind": "step"
+   },
+   {
+    "label": "13 · done",
+    "t": 70.51,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s3_slim_grasp_after",
+  "type": "story",
+  "story": "s3_slim_grasp",
+  "side": "after",
+  "benchmark": "RoboTwin",
+  "title": "After (H16): fingers close horizontally; both bottles lifted in 4 calls",
+  "outcome": "success",
+  "versions": "H15 → H16",
+  "duration": 33.24,
+  "file": "s3_slim_grasp_after.mp4",
+  "file_960": "s3_slim_grasp_after_960.mp4",
+  "cover": "s3_slim_grasp_after.jpg",
+  "video": "data/dash/s3_slim_grasp_after.mp4",
+  "video_960": "data/dash/s3_slim_grasp_after_960.mp4",
+  "poster": "data/dash/s3_slim_grasp_after.jpg",
+  "size_mb": 2.07,
+  "size_960_mb": 0.59,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · bimanual",
+    "t": 9.31,
+    "kind": "step"
+   },
+   {
+    "label": "3 · bimanual",
+    "t": 15.98,
+    "kind": "step"
+   },
+   {
+    "label": "4 · done",
+    "t": 20.48,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 26.74,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s3_slim_grasp_compare",
+  "type": "compare",
+  "story": "s3_slim_grasp",
+  "benchmark": "RoboTwin",
+  "title": "H15 → H16 · Not knocking over tall bottles",
+  "versions": "H15 → H16",
+  "duration": 82.0,
+  "file": "s3_slim_grasp_compare.mp4",
+  "file_960": "s3_slim_grasp_compare_960.mp4",
+  "cover": "s3_slim_grasp_compare.jpg",
+  "video": "data/dash/s3_slim_grasp_compare.mp4",
+  "video_960": "data/dash/s3_slim_grasp_compare_960.mp4",
+  "poster": "data/dash/s3_slim_grasp_compare.jpg",
+  "size_mb": 3.56,
+  "size_960_mb": 1.1,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · bimanual",
+    "t": 6.48,
+    "kind": "step"
+   },
+   {
+    "label": "3 · bimanual (first divergence)",
+    "t": 11.11,
+    "kind": "diverge"
+   },
+   {
+    "label": "4 · bimanual / done",
+    "t": 16.74,
+    "kind": "step"
+   },
+   {
+    "label": "5 · bimanual / —",
+    "t": 23.22,
+    "kind": "step"
+   },
+   {
+    "label": "6 · bimanual / —",
+    "t": 29.02,
+    "kind": "step"
+   },
+   {
+    "label": "7 · bimanual / —",
+    "t": 32.93,
+    "kind": "step"
+   },
+   {
+    "label": "8 · bimanual / —",
+    "t": 39.4,
+    "kind": "step"
+   },
+   {
+    "label": "9 · move / —",
+    "t": 44.96,
+    "kind": "step"
+   },
+   {
+    "label": "10 · bimanual / —",
+    "t": 50.88,
+    "kind": "step"
+   },
+   {
+    "label": "11 · bimanual / —",
+    "t": 57.35,
+    "kind": "step"
+   },
+   {
+    "label": "12 · verify / —",
+    "t": 63.83,
+    "kind": "step"
+   },
+   {
+    "label": "13 · done / —",
+    "t": 70.66,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s4_gentle_release_before",
+  "type": "story",
+  "story": "s4_gentle_release",
+  "side": "before",
+  "benchmark": "RoboTwin",
+  "title": "Before (H15): opening the fingers at the table flings the card box 43 cm away",
+  "outcome": "failure",
+  "versions": "H15 → H16",
+  "duration": 82.0,
+  "file": "s4_gentle_release_before.mp4",
+  "file_960": "s4_gentle_release_before_960.mp4",
+  "cover": "s4_gentle_release_before.jpg",
+  "video": "data/dash/s4_gentle_release_before.mp4",
+  "video_960": "data/dash/s4_gentle_release_before_960.mp4",
+  "poster": "data/dash/s4_gentle_release_before.jpg",
+  "size_mb": 6.23,
+  "size_960_mb": 1.84,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 2.18,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 4.36,
+    "kind": "step"
+   },
+   {
+    "label": "4 · locate",
+    "t": 6.54,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp",
+    "t": 9.21,
+    "kind": "step"
+   },
+   {
+    "label": "6 · place",
+    "t": 11.88,
+    "kind": "step"
+   },
+   {
+    "label": "7 · locate",
+    "t": 14.55,
+    "kind": "step"
+   },
+   {
+    "label": "8 · home",
+    "t": 16.73,
+    "kind": "step"
+   },
+   {
+    "label": "9 · locate",
+    "t": 19.4,
+    "kind": "step"
+   },
+   {
+    "label": "10 · grasp",
+    "t": 22.07,
+    "kind": "step"
+   },
+   {
+    "label": "11 · home",
+    "t": 24.74,
+    "kind": "step"
+   },
+   {
+    "label": "12 · locate",
+    "t": 27.21,
+    "kind": "step"
+   },
+   {
+    "label": "13 · grasp",
+    "t": 29.57,
+    "kind": "step"
+   },
+   {
+    "label": "14 · grasp",
+    "t": 32.24,
+    "kind": "step"
+   },
+   {
+    "label": "15 · home",
+    "t": 34.91,
+    "kind": "step"
+   },
+   {
+    "label": "16 · locate",
+    "t": 37.65,
+    "kind": "step"
+   },
+   {
+    "label": "17 · push",
+    "t": 40.32,
+    "kind": "step"
+   },
+   {
+    "label": "18 · release",
+    "t": 42.99,
+    "kind": "step"
+   },
+   {
+    "label": "19 · push",
+    "t": 45.17,
+    "kind": "step"
+   },
+   {
+    "label": "20 · release",
+    "t": 47.84,
+    "kind": "step"
+   },
+   {
+    "label": "21 · grasp",
+    "t": 50.51,
+    "kind": "step"
+   },
+   {
+    "label": "22 · grasp",
+    "t": 53.18,
+    "kind": "step"
+   },
+   {
+    "label": "23 · move",
+    "t": 55.85,
+    "kind": "step"
+   },
+   {
+    "label": "24 · grasp",
+    "t": 58.52,
+    "kind": "step"
+   },
+   {
+    "label": "25 · locate",
+    "t": 60.7,
+    "kind": "step"
+   },
+   {
+    "label": "26 · move",
+    "t": 62.88,
+    "kind": "step"
+   },
+   {
+    "label": "27 · grasp",
+    "t": 65.55,
+    "kind": "step"
+   },
+   {
+    "label": "28 · grasp",
+    "t": 67.73,
+    "kind": "step"
+   },
+   {
+    "label": "29 · move",
+    "t": 70.03,
+    "kind": "step"
+   },
+   {
+    "label": "30 · done",
+    "t": 72.7,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s4_gentle_release_after",
+  "type": "story",
+  "story": "s4_gentle_release",
+  "side": "after",
+  "benchmark": "RoboTwin",
+  "title": "After (H16): partial open, back off, then open: the box stays on target",
+  "outcome": "success",
+  "versions": "H15 → H16",
+  "duration": 29.07,
+  "file": "s4_gentle_release_after.mp4",
+  "file_960": "s4_gentle_release_after_960.mp4",
+  "cover": "s4_gentle_release_after.jpg",
+  "video": "data/dash/s4_gentle_release_after.mp4",
+  "video_960": "data/dash/s4_gentle_release_after_960.mp4",
+  "poster": "data/dash/s4_gentle_release_after.jpg",
+  "size_mb": 1.74,
+  "size_960_mb": 0.49,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 5.24,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 10.12,
+    "kind": "step"
+   },
+   {
+    "label": "4 · done",
+    "t": 15.81,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 22.57,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s4_gentle_release_compare",
+  "type": "compare",
+  "story": "s4_gentle_release",
+  "benchmark": "RoboTwin",
+  "title": "H15 → H16 · Letting go without throwing",
+  "versions": "H15 → H16",
+  "duration": 82.0,
+  "file": "s4_gentle_release_compare.mp4",
+  "file_960": "s4_gentle_release_compare_960.mp4",
+  "cover": "s4_gentle_release_compare.jpg",
+  "video": "data/dash/s4_gentle_release_compare.mp4",
+  "video_960": "data/dash/s4_gentle_release_compare_960.mp4",
+  "poster": "data/dash/s4_gentle_release_compare.jpg",
+  "size_mb": 3.34,
+  "size_960_mb": 1.01,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 2.09,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place (first divergence)",
+    "t": 4.19,
+    "kind": "diverge"
+   },
+   {
+    "label": "4 · locate / done",
+    "t": 8.28,
+    "kind": "step"
+   },
+   {
+    "label": "5 · grasp / —",
+    "t": 10.89,
+    "kind": "step"
+   },
+   {
+    "label": "6 · place / —",
+    "t": 13.5,
+    "kind": "step"
+   },
+   {
+    "label": "7 · locate / —",
+    "t": 16.11,
+    "kind": "step"
+   },
+   {
+    "label": "8 · home / —",
+    "t": 18.2,
+    "kind": "step"
+   },
+   {
+    "label": "9 · locate / —",
+    "t": 20.81,
+    "kind": "step"
+   },
+   {
+    "label": "10 · grasp / —",
+    "t": 23.42,
+    "kind": "step"
+   },
+   {
+    "label": "11 · home / —",
+    "t": 26.03,
+    "kind": "step"
+   },
+   {
+    "label": "12 · locate / —",
+    "t": 28.45,
+    "kind": "step"
+   },
+   {
+    "label": "13 · grasp / —",
+    "t": 30.75,
+    "kind": "step"
+   },
+   {
+    "label": "14 · grasp / —",
+    "t": 33.36,
+    "kind": "step"
+   },
+   {
+    "label": "15 · home / —",
+    "t": 35.97,
+    "kind": "step"
+   },
+   {
+    "label": "16 · locate / —",
+    "t": 38.65,
+    "kind": "step"
+   },
+   {
+    "label": "17 · push / —",
+    "t": 41.26,
+    "kind": "step"
+   },
+   {
+    "label": "18 · release / —",
+    "t": 43.87,
+    "kind": "step"
+   },
+   {
+    "label": "19 · push / —",
+    "t": 45.97,
+    "kind": "step"
+   },
+   {
+    "label": "20 · release / —",
+    "t": 48.58,
+    "kind": "step"
+   },
+   {
+    "label": "21 · grasp / —",
+    "t": 51.19,
+    "kind": "step"
+   },
+   {
+    "label": "22 · grasp / —",
+    "t": 53.8,
+    "kind": "step"
+   },
+   {
+    "label": "23 · move / —",
+    "t": 56.41,
+    "kind": "step"
+   },
+   {
+    "label": "24 · grasp / —",
+    "t": 59.01,
+    "kind": "step"
+   },
+   {
+    "label": "25 · locate / —",
+    "t": 61.11,
+    "kind": "step"
+   },
+   {
+    "label": "26 · move / —",
+    "t": 63.2,
+    "kind": "step"
+   },
+   {
+    "label": "27 · grasp / —",
+    "t": 65.81,
+    "kind": "step"
+   },
+   {
+    "label": "28 · grasp / —",
+    "t": 67.9,
+    "kind": "step"
+   },
+   {
+    "label": "29 · move / —",
+    "t": 70.16,
+    "kind": "step"
+   },
+   {
+    "label": "30 · done / —",
+    "t": 72.77,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 75.5,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s5_honest_height_before",
+  "type": "story",
+  "story": "s5_honest_height",
+  "side": "before",
+  "benchmark": "RoboTwin",
+  "title": "Before (H16): height check passes on the gripper pose; done is accepted",
+  "outcome": "failure",
+  "versions": "H16 → H*",
+  "duration": 53.65,
+  "file": "s5_honest_height_before.mp4",
+  "file_960": "s5_honest_height_before_960.mp4",
+  "cover": "s5_honest_height_before.jpg",
+  "video": "data/dash/s5_honest_height_before.mp4",
+  "video_960": "data/dash/s5_honest_height_before_960.mp4",
+  "poster": "data/dash/s5_honest_height_before.jpg",
+  "size_mb": 3.69,
+  "size_960_mb": 1.05,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 6.52,
+    "kind": "step"
+   },
+   {
+    "label": "3 · carry",
+    "t": 15.58,
+    "kind": "step"
+   },
+   {
+    "label": "4 · handover",
+    "t": 22.04,
+    "kind": "step"
+   },
+   {
+    "label": "5 · carry",
+    "t": 27.27,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 36.33,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done",
+    "t": 41.68,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 47.15,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s5_honest_height_after",
+  "type": "story",
+  "story": "s5_honest_height",
+  "side": "after",
+  "benchmark": "RoboTwin",
+  "title": "After (H*): the check estimates the hanging mic at 17.9 cm, the model lifts 4 cm more",
+  "outcome": "success",
+  "versions": "H16 → H*",
+  "duration": 69.23,
+  "file": "s5_honest_height_after.mp4",
+  "file_960": "s5_honest_height_after_960.mp4",
+  "cover": "s5_honest_height_after.jpg",
+  "video": "data/dash/s5_honest_height_after.mp4",
+  "video_960": "data/dash/s5_honest_height_after_960.mp4",
+  "poster": "data/dash/s5_honest_height_after.jpg",
+  "size_mb": 4.52,
+  "size_960_mb": 1.29,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 6.47,
+    "kind": "step"
+   },
+   {
+    "label": "3 · carry",
+    "t": 14.52,
+    "kind": "step"
+   },
+   {
+    "label": "4 · handover",
+    "t": 22.94,
+    "kind": "step"
+   },
+   {
+    "label": "5 · carry",
+    "t": 28.49,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 37.55,
+    "kind": "step"
+   },
+   {
+    "label": "7 · move",
+    "t": 45.95,
+    "kind": "step"
+   },
+   {
+    "label": "8 · verify",
+    "t": 50.33,
+    "kind": "step"
+   },
+   {
+    "label": "9 · done",
+    "t": 56.34,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 62.73,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "s5_honest_height_compare",
+  "type": "compare",
+  "story": "s5_honest_height",
+  "benchmark": "RoboTwin",
+  "title": "H16 → H* · Refusing a false “done”",
+  "versions": "H16 → H*",
+  "duration": 66.89,
+  "file": "s5_honest_height_compare.mp4",
+  "file_960": "s5_honest_height_compare_960.mp4",
+  "cover": "s5_honest_height_compare.jpg",
+  "video": "data/dash/s5_honest_height_compare.mp4",
+  "video_960": "data/dash/s5_honest_height_compare_960.mp4",
+  "poster": "data/dash/s5_honest_height_compare.jpg",
+  "size_mb": 3.49,
+  "size_960_mb": 1.02,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 5.87,
+    "kind": "step"
+   },
+   {
+    "label": "3 · carry",
+    "t": 14.02,
+    "kind": "step"
+   },
+   {
+    "label": "4 · handover",
+    "t": 21.6,
+    "kind": "step"
+   },
+   {
+    "label": "5 · carry (first divergence)",
+    "t": 26.59,
+    "kind": "diverge"
+   },
+   {
+    "label": "6 · verify",
+    "t": 36.75,
+    "kind": "step"
+   },
+   {
+    "label": "7 · done / move",
+    "t": 44.31,
+    "kind": "step"
+   },
+   {
+    "label": "8 · — / verify",
+    "t": 49.23,
+    "kind": "step"
+   },
+   {
+    "label": "9 · — / done",
+    "t": 54.64,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 60.39,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "real_01",
+  "type": "real",
+  "benchmark": "Real robot",
+  "title": "Two balls into matching boxes",
+  "outcome": "success",
+  "caption": "TinyAstral-4B closed loop on a real SO-ARM101 arm, 10 model calls: it locates the objects, grasps and lifts the pink ball, releases it above the pink box, homes the arm, then grasps the blue ball and places it in the blue box. The operator stopped the run at the final done call and judged it a success. Arm motion is fast-forwarded (speed shown on the video).",
+  "speed": "partly fast-forwarded",
+  "duration": 96.77,
+  "file": "real_01.mp4",
+  "file_960": "real_01_960.mp4",
+  "cover": "real_01.jpg",
+  "video": "data/dash/real_01.mp4",
+  "video_960": "data/dash/real_01_960.mp4",
+  "poster": "data/dash/real_01.jpg",
+  "size_mb": 7.59,
+  "size_960_mb": 1.77,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 9.09,
+    "kind": "step"
+   },
+   {
+    "label": "3 · lift",
+    "t": 19.61,
+    "kind": "step"
+   },
+   {
+    "label": "4 · place",
+    "t": 24.94,
+    "kind": "step"
+   },
+   {
+    "label": "5 · release",
+    "t": 36.01,
+    "kind": "step"
+   },
+   {
+    "label": "6 · verify",
+    "t": 48.51,
+    "kind": "step"
+   },
+   {
+    "label": "7 · home",
+    "t": 54.25,
+    "kind": "step"
+   },
+   {
+    "label": "8 · grasp",
+    "t": 64.4,
+    "kind": "step"
+   },
+   {
+    "label": "9 · place",
+    "t": 74.74,
+    "kind": "step"
+   },
+   {
+    "label": "10 · done",
+    "t": 85.06,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 90.27,
+    "kind": "intro"
+   }
+  ]
+ },
+ {
+  "id": "real_02",
+  "type": "real",
+  "benchmark": "Real robot",
+  "title": "Stacks three tape rolls",
+  "outcome": "success",
+  "caption": "TinyAstral-4B closed loop on a real SO-ARM101 arm, 8 tool calls. This run did not log the model's reasoning, so the panel shows each tool call and its result. The planner stacks the blue roll on the white one, re-locates the rolls and stacks the brown roll on the blue one; the operator then stopped the run and judged the stack a success. Arm motion is fast-forwarded (speed shown on the video).",
+  "speed": "partly fast-forwarded",
+  "duration": 79.64,
+  "file": "real_02.mp4",
+  "file_960": "real_02_960.mp4",
+  "cover": "real_02.jpg",
+  "video": "data/dash/real_02.mp4",
+  "video_960": "data/dash/real_02_960.mp4",
+  "poster": "data/dash/real_02.jpg",
+  "size_mb": 6.52,
+  "size_960_mb": 1.48,
+  "chapters": [
+   {
+    "label": "1 · locate",
+    "t": 0.0,
+    "kind": "step"
+   },
+   {
+    "label": "2 · grasp",
+    "t": 7.6,
+    "kind": "step"
+   },
+   {
+    "label": "3 · place",
+    "t": 18.37,
+    "kind": "step"
+   },
+   {
+    "label": "4 · grasp",
+    "t": 29.24,
+    "kind": "step"
+   },
+   {
+    "label": "5 · place",
+    "t": 38.74,
+    "kind": "step"
+   },
+   {
+    "label": "6 · locate",
+    "t": 48.32,
+    "kind": "step"
+   },
+   {
+    "label": "7 · place",
+    "t": 54.91,
+    "kind": "step"
+   },
+   {
+    "label": "8 · verify",
+    "t": 66.64,
+    "kind": "step"
+   },
+   {
+    "label": "Summary",
+    "t": 73.14,
+    "kind": "intro"
+   }
+  ]
+ }
+]

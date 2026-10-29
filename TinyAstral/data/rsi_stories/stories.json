@@ -1,0 +1,72 @@
+[
+ {
+  "id": "s1_task_note_goal",
+  "title": "Knowing what “done” means",
+  "version_from": "H1",
+  "version_to": "H3",
+  "capability": "Task memory: a teacher-written note of the expert end state, plus a per-step goal line",
+  "summary": "“Relocate it” hides the real goal (about 30 cm outward). With the note, the planner moves the deck the right distance, where it used to stop after 13 cm.",
+  "evidence": "Dev A/B vs H1 (same seeds, two passes): 49.4% vs 35.1% and 47.2% vs 35.5%, +34.5 episodes per pass",
+  "task": "move_playingcard_away",
+  "seed": 75002,
+  "before": "s1_task_note_goal/before/episode.json",
+  "after": "s1_task_note_goal/after/episode.json",
+  "diff": "s1_task_note_goal/change.md"
+ },
+ {
+  "id": "s2_face_now",
+  "title": "Turning the right side to face the robot",
+  "version_from": "H7",
+  "version_to": "H12",
+  "capability": "Orientation: place(face, face_now) + audited end-state note",
+  "summary": "The planner says which way the QR side faces now; the tool turns it 178° to face the robot, instead of applying a guessed −90° turn.",
+  "evidence": "rotate_qrcode: 0/30 dev episodes before; 0/10 → 5/10 on evaluation episodes (tool + note combined)",
+  "task": "rotate_qrcode",
+  "seed": 68506,
+  "before": "s2_face_now/before/episode.json",
+  "after": "s2_face_now/after/episode.json",
+  "diff": "s2_face_now/change.md"
+ },
+ {
+  "id": "s3_slim_grasp",
+  "title": "Not knocking over tall bottles",
+  "version_from": "H15",
+  "version_to": "H16",
+  "capability": "Grasp parameters: fingers close horizontally on tall slender objects",
+  "summary": "A tilted grasp used to close one finger above the other and tip the bottle over. Now both bottles come up upright in 4 calls.",
+  "evidence": "Bench knock-overs 11 → 4; fired on 126 target pairs, 41 wins / 10 losses; H16 accepted at +5.45 pp (lower bound +2.99)",
+  "task": "pick_dual_bottles",
+  "seed": 92205,
+  "before": "s3_slim_grasp/before/episode.json",
+  "after": "s3_slim_grasp/after/episode.json",
+  "diff": "s3_slim_grasp/change.md"
+ },
+ {
+  "id": "s4_gentle_release",
+  "title": "Letting go without throwing",
+  "version_from": "H15",
+  "version_to": "H16",
+  "capability": "Execution: partial open → back off → open fully",
+  "summary": "Opening the fingers fully at the table flung the card box 43 cm. The new release order keeps it within 0.5 cm of the target.",
+  "evidence": "Fired on 334 target pairs, 72 wins / 37 losses; bench 49 releases, 0 worse; H16 accepted at +5.45 pp",
+  "task": "move_playingcard_away",
+  "seed": 92248,
+  "before": "s4_gentle_release/before/episode.json",
+  "after": "s4_gentle_release/after/episode.json",
+  "diff": "s4_gentle_release/change.md"
+ },
+ {
+  "id": "s5_honest_height",
+  "title": "Refusing a false “done”",
+  "version_from": "H16",
+  "version_to": "H*",
+  "capability": "Verification: held-object height check that allows for hanging and swing",
+  "summary": "The old check read the height from the gripper and accepted done while the mic hung too low. The new check says “not confirmed”, so the model lifts 4 cm more and succeeds.",
+  "evidence": "Decision set 194 pairs +18.04 pp (lower bound +12.24); target cluster 45 wins / 18 losses; evaluation 63.6% vs 60.4%",
+  "task": "handover_mic",
+  "seed": 69209,
+  "before": "s5_honest_height/before/episode.json",
+  "after": "s5_honest_height/after/episode.json",
+  "diff": "s5_honest_height/change.md"
+ }
+]

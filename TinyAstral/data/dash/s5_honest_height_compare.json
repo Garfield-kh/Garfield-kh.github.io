@@ -1,0 +1,46 @@
+{
+ "duration": 66.89,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 5.87
+  },
+  {
+   "label": "3 \u00b7 carry",
+   "t": 14.02
+  },
+  {
+   "label": "4 \u00b7 handover",
+   "t": 21.6
+  },
+  {
+   "label": "5 \u00b7 carry (first divergence)",
+   "t": 26.59
+  },
+  {
+   "label": "6 \u00b7 verify",
+   "t": 36.75
+  },
+  {
+   "label": "7 \u00b7 done / move",
+   "t": 44.31
+  },
+  {
+   "label": "8 \u00b7 \u2014 / verify",
+   "t": 49.23
+  },
+  {
+   "label": "9 \u00b7 \u2014 / done",
+   "t": 54.64
+  },
+  {
+   "label": "Summary",
+   "t": 60.39
+  }
+ ],
+ "frames": 2007
+}

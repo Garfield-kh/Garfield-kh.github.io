@@ -1,0 +1,62 @@
+{
+ "duration": 82.0,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 bimanual",
+   "t": 6.48
+  },
+  {
+   "label": "3 \u00b7 bimanual (first divergence)",
+   "t": 11.11
+  },
+  {
+   "label": "4 \u00b7 bimanual / done",
+   "t": 16.74
+  },
+  {
+   "label": "5 \u00b7 bimanual / \u2014",
+   "t": 23.22
+  },
+  {
+   "label": "6 \u00b7 bimanual / \u2014",
+   "t": 29.02
+  },
+  {
+   "label": "7 \u00b7 bimanual / \u2014",
+   "t": 32.93
+  },
+  {
+   "label": "8 \u00b7 bimanual / \u2014",
+   "t": 39.4
+  },
+  {
+   "label": "9 \u00b7 move / \u2014",
+   "t": 44.96
+  },
+  {
+   "label": "10 \u00b7 bimanual / \u2014",
+   "t": 50.88
+  },
+  {
+   "label": "11 \u00b7 bimanual / \u2014",
+   "t": 57.35
+  },
+  {
+   "label": "12 \u00b7 verify / \u2014",
+   "t": 63.83
+  },
+  {
+   "label": "13 \u00b7 done / \u2014",
+   "t": 70.66
+  },
+  {
+   "label": "Summary",
+   "t": 75.5
+  }
+ ],
+ "frames": 2460
+}

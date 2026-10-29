@@ -1,0 +1,2164 @@
+{
+ "source": "capability ledger of the RSI run",
+ "phases": [
+  {
+   "key": "S0",
+   "label": "Phase 1",
+   "desc": "early prototypes"
+  },
+  {
+   "key": "S1/S2",
+   "label": "Phase 2",
+   "desc": "unified tool layer, privileged inputs removed"
+  },
+  {
+   "key": "S3",
+   "label": "Phase 3",
+   "desc": "small automatic patches"
+  },
+  {
+   "key": "S4",
+   "label": "Phase 4",
+   "desc": "RSI-50 batch"
+  },
+  {
+   "key": "S5",
+   "label": "Phase 5",
+   "desc": "four parallel branches"
+  },
+  {
+   "key": "S6 FX",
+   "label": "Phase 6",
+   "desc": "branch fusion"
+  },
+  {
+   "key": "S6 AT",
+   "label": "Phase 7",
+   "desc": "hard-task push"
+  },
+  {
+   "key": "RSI-7 周期前",
+   "label": "Phase 8",
+   "desc": "branch development"
+  },
+  {
+   "key": "C1",
+   "label": "Cycle 1",
+   "desc": "integration cycle 1"
+  },
+  {
+   "key": "C2",
+   "label": "Cycle 2",
+   "desc": "integration cycle 2"
+  },
+  {
+   "key": "C3",
+   "label": "Cycle 3",
+   "desc": "integration cycle 3"
+  },
+  {
+   "key": "C4",
+   "label": "Cycle 4",
+   "desc": "integration cycle 4"
+  },
+  {
+   "key": "C5",
+   "label": "Cycle 5",
+   "desc": "integration cycle 5"
+  },
+  {
+   "key": "C6",
+   "label": "Cycle 6",
+   "desc": "integration cycle 6"
+  },
+  {
+   "key": "C7",
+   "label": "Cycle 7",
+   "desc": "integration cycle 7"
+  },
+  {
+   "key": "C8",
+   "label": "Cycle 8",
+   "desc": "exploration, not merged"
+  },
+  {
+   "key": "MERGE",
+   "label": "Merge",
+   "desc": "merge of the three training benchmarks → H*"
+  }
+ ],
+ "items": [
+  {
+   "phase": "S0",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Interruptible skills with low-level closed loop, hinge-constrained trajectories, arm switch when out of reach"
+  },
+  {
+   "phase": "S0",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S0",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S0",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S0",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S0",
+   "cat": "prompt",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S0",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Camera localisation: SAM3 + depth + multi-view fusion (replaces ground-truth object poses)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Object-level grasp(object, part): orientation from the point cloud, IK reachability check per candidate"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "place finds the support surface first (surface / container floor / table point from the reference cloud)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "handover via the table (re-grasp through a table hand-off)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "prompt",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Look at the whole scene first (locate/perceive before acting)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Frozen baseline after further iteration (v2g)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "prompt",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Unified tool layer shared by all three training benchmarks"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Higher post-place retreat (8→10 cm) and 'on' test for thin supports"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Re-measure after release and report OFF_TARGET(dx, dy, dyaw); one automatic re-place"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Static-reference rule: untouched reference that jumps >6 cm is a mis-detection; keep the first observation"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Auto-align long edges when placing a thin object on a thin flat target"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Lean / 'against' placement mode for phone-on-stand"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "grasp part='left/right handle': split handles by geometry from raw depth"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Grasp the outer bar of handles; pre-open the gripper halfway"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Track held objects by grasp-time cloud × hand pose; camera check only in the lift test"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "articulate: open lids about a horizontal hinge in 6° steps"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Side grasp for tall thin objects at 72% height"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Report toppled objects (height loss >35% after release) as OFF_TARGET"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Table height fitted from head-camera depth (no simulator ground truth)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Rename *_block to *_pad and measure height from the camera"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Remove privileged interfaces (planner/pose/AABB/joint ground truth)"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "No-object-list switch: planner gets only the instruction and names objects itself"
+  },
+  {
+   "phase": "S1/S2",
+   "cat": "prompt",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Remove a task-specific example from the prompt"
+  },
+  {
+   "phase": "S3",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Several objects into one container: split long containers into slots"
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Containers that received an object are marked touched; trust their new position"
+  },
+  {
+   "phase": "S3",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Idle arm hovering over the target goes home before carry/grasp"
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "carry stops short → retry once, then report BLOCKED (keep holding)"
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Failed lift test (SLIPPED): lower to grasp height before opening"
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Invisible reference: use last known (dead-reckoned) position"
+  },
+  {
+   "phase": "S3",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S3",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "prompt",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S4",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Task memory m1: notes from expert runs on development seeds"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "prompt",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Add a one-line task goal from the memory note to every step"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Auto-align trigger uses the PCA minimum bounding rectangle"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "xy offsets on the reference object (within ±3 cm of its box)"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Pick free spots by occupancy on / in a reference"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Mark references as touched after placing; flat references keep the first observation"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "on→in needs a rim on ≥3/4 sectors; wide low references use the footprint centre"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Nesting bowls: release on the rim when the footprint fills the opening"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "beside gap 3→5 cm; expose left_of / right_of / front_of / behind"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Fully open fingers (>0.97) → NOT_CLOSED"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Bimanual grasp of two different objects → two single-arm grasps"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Do not release on PLAN_FAIL far from target; report RELEASED_NOT_SEEN"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "lift uses absolute height (both arms to the same height)"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Topple detection for objects that were standing"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Re-open after press; new predicates upright, at, same_row"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "turn_deg for place/carry (tool rotates about the vertical axis)"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Soft grasp: target opening = contact opening − 0.15"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Soft-grasp command cap 0.18"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Stepwise gripper opening"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Directional press (down / tilted / horizontal), automatic fallback"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "pour(arm, direction, degrees): pour from a held container"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "held_part for place/carry: align one end of the held object with the target"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Task memory m2: m1 rewritten by the teacher from its own practice runs"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Remove soft grasp"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "face= for place/carry: turn the thinnest side of the held object to a direction"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Task memory m4: m2 rewritten once more from practice runs"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Held-object transform from the actual closed hand pose"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Do not release on failed descent; report motion failures truthfully"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Plates use the 'in' route (embed at the bottom)"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Vertical upper bound for on/in predicates"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "beside distance = half-widths + gap; documented left_of / right_of"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "No auto re-grasp for tall thin objects; side-grip band for bottles"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Serialise bimanual grasps of two objects"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Directed orientation interface place(orient=long_axis, end_now→toward)"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Task memory layer v1: description + expert start/end diffs + teacher dev statistics"
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "upright(arm, object, top_end_now): stand a lying object up"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "upright guards (reject standing / flat / non-elongated objects)"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "strike(arm, object, ref): hit a reference with the far end of a held tool"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "place relation=drop (release above a container opening)"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Perceive off-table bins (points below the table edge)"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Memory v3: merge teacher statistics; one-time done reminder naming passed checks"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "on() accepts standing-inside / leaning; strike and press report NOT_REACHED / OFF_TARGET"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Topple threshold: height loss >50% and >5 cm"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Memory v4: two revision rounds of the third tier"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Side flick for narrow switches after a failed press"
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Memory injection pipeline (harness does not read task names)"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Task memory v1 (qualitative end states, no numbers, plus teacher trial-and-error)"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Task memory v1.1: hard-error corrections"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Vision-only protocol without object list (baseline)"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Re-build held geometry from one post-grasp observation"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Relative rotation with centre compensation; partial execution reported"
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Uncertain post-place feedback: partial→unknown; no auto re-grasp"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Unified task-memory switch and memory from successful demos + own failures"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Post-rotation bottom height from the current rigid cloud"
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Restore the public object-name list protocol"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Actual grasp pose and consistent held-body frame"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Placement rotation transaction with fixed final quaternion"
+  },
+  {
+   "phase": "S5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Multi-height grasp candidates for tall objects"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Robot-pixel filtering, stable visual query labels, geometry anomaly gates"
+  },
+  {
+   "phase": "S5",
+   "cat": "prompt",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Teacher-editable goal ledger (not a success oracle)"
+  },
+  {
+   "phase": "S5",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Unified memory: official notes + successful demos + up to 3 own dev trials"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Identity anchors, same-view mask instance constraints, fused-cloud dedup"
+  },
+  {
+   "phase": "S5",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Tool-call structure normalisation; ambiguous calls rejected"
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S5",
+   "cat": "perception",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "No auto re-grasp for standing tall objects; no double rotation after re-grasp"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "relation drop + off-table bin perception"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "pour falls back to wrist rotation when pivoting about the object fails"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "held_part accepts far end / head / tip; unknown values → BAD_ARG"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "protocol",
+   "fate": "adopted",
+   "in_final": false,
+   "name": "Empty-argument guard returns BAD_ARG with a format hint"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Memory m5: deterministic cleaning of copied numbers"
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 FX",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "perception",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Post-release jump >10 cm → MEASURE_UNSURE (judge from the image)"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "protocol",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "verify/done: untouched object far from release → ok=null"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "perception",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Long-distance re-measure flagged uncertain only when the shape disagrees"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Re-place after auto re-grasp recomputes face=; keeps reached orientation"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Horizontal press hits the most protruding block"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "memory",
+   "fate": "superseded",
+   "in_final": true,
+   "name": "Memory m4a: end states audited against expert end states and checker code"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Release records recursively forgotten for moved supports"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "MEASURE_UNSURE never overrides PLAN_FAIL; neutral wording"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "prompt",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "done rejected only for ok=null → 'judge from images' wording"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "pour reports OK only within 10° of the requested angle"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "face_now= for place/carry: planner says which side faces where now"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Memory m4b: orientation note for a rotation task"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "face= computed on the thinnest height slice of the held object"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Memory m4c: end-state notes for two tasks"
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "S6 AT",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "protocol",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "superseded",
+   "in_final": false,
+   "name": "Explicit bimanual end-to-end docking without release"
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "protocol",
+   "fate": "rejected",
+   "in_final": true,
+   "name": ""
+  },
+  {
+   "phase": "RSI-7 周期前",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "protocol",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "perception",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "perception",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "infra",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C1",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "face= affects orientation only (slice-based face, post-check, one correction)"
+  },
+  {
+   "phase": "C2",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C2",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C2",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C2",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "press/articulate return PARTIAL when not fully done"
+  },
+  {
+   "phase": "C2",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Remove mid-air handover"
+  },
+  {
+   "phase": "C3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Steeper tilted / yawed grasp candidates after all candidates fail planning"
+  },
+  {
+   "phase": "C3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "First-look instance consistency check before grasping (TARGET_MOVED)"
+  },
+  {
+   "phase": "C3",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Honest completion + success protection (re-press, continued articulation, verified_earlier)"
+  },
+  {
+   "phase": "C3",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Memory fix for 7 tasks"
+  },
+  {
+   "phase": "C3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C3",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C3",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C4",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C4",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C4",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C4",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Release order: open to contact, retreat vertically, then open fully"
+  },
+  {
+   "phase": "C5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Horizontal closing for side grasps of tall thin upright objects"
+  },
+  {
+   "phase": "C5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Lift before descending when the pre-grasp path would sweep an upright object"
+  },
+  {
+   "phase": "C5",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "push rewritten with honest NOT_PUSHABLE / UNREACHABLE / NO_CONTACT / TOPPLED"
+  },
+  {
+   "phase": "C5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Shoe-toe detection along the long axis; re-grasp only when clearly reversed"
+  },
+  {
+   "phase": "C5",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "carry with held_part re-measures the tool head and corrects 1.5–10 cm offsets"
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "perception",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "primitive",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C6",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C7",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Honest height for held objects in verify/done (sag estimate)"
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Panel switch pressing with re-look before the second push"
+  },
+  {
+   "phase": "C7",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Camera-measured drawer opening and in-drawer placement check"
+  },
+  {
+   "phase": "C7",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Lean placement turns the flat face toward the robot"
+  },
+  {
+   "phase": "C7",
+   "cat": "primitive",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Bin dumping: opening choice and honest PARTIAL"
+  },
+  {
+   "phase": "C7",
+   "cat": "memory",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Task memory (memory fixes for 5 tasks)"
+  },
+  {
+   "phase": "C7",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C8",
+   "cat": "memory",
+   "fate": "undecided",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C8",
+   "cat": "memory",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C8",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "C8",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "MERGE",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Guava/LIBERO post-release re-measure: OFF_TARGET / MEASURE_UNSURE"
+  },
+  {
+   "phase": "MERGE",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Guava/LIBERO honest done (ok=null wording, held check)"
+  },
+  {
+   "phase": "MERGE",
+   "cat": "tool",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "Guava/LIBERO failure handling: SLIPPED lower-then-open, no release on PLAN_FAIL"
+  },
+  {
+   "phase": "MERGE",
+   "cat": "perception",
+   "fate": "adopted",
+   "in_final": true,
+   "name": "LIBERO instance lock before grasping"
+  },
+  {
+   "phase": "MERGE",
+   "cat": "tool",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  },
+  {
+   "phase": "MERGE",
+   "cat": "primitive",
+   "fate": "rejected",
+   "in_final": false,
+   "name": ""
+  }
+ ]
+}

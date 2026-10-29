@@ -1,0 +1,30 @@
+{
+ "duration": 41.2,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 locate",
+   "t": 4.63
+  },
+  {
+   "label": "3 \u00b7 inspect",
+   "t": 8.96
+  },
+  {
+   "label": "4 \u00b7 grasp",
+   "t": 18.27
+  },
+  {
+   "label": "5 \u00b7 lift",
+   "t": 25.39
+  },
+  {
+   "label": "Summary",
+   "t": 34.7
+  }
+ ],
+ "frames": 1236
+}

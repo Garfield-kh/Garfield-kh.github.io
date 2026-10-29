@@ -1,0 +1,50 @@
+{
+ "duration": 72.98,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 locate",
+   "t": 5.57
+  },
+  {
+   "label": "3 \u00b7 grasp",
+   "t": 11.61
+  },
+  {
+   "label": "4 \u00b7 place",
+   "t": 16.02
+  },
+  {
+   "label": "5 \u00b7 grasp",
+   "t": 21.16
+  },
+  {
+   "label": "6 \u00b7 grasp",
+   "t": 30.22
+  },
+  {
+   "label": "7 \u00b7 grasp",
+   "t": 38.01
+  },
+  {
+   "label": "8 \u00b7 move",
+   "t": 44.13
+  },
+  {
+   "label": "9 \u00b7 verify",
+   "t": 52.85
+  },
+  {
+   "label": "10 \u00b7 done",
+   "t": 62.33
+  },
+  {
+   "label": "Summary",
+   "t": 66.48
+  }
+ ],
+ "frames": 2189
+}

@@ -1,0 +1,108 @@
+{
+ "id": "liberopro_t13_s0",
+ "title": "Picks the right one of two identical bowls",
+ "benchmark": "LIBERO-PRO",
+ "split": "training",
+ "instruction": "lift black bowl from cookie box and put it on plate",
+ "model": "TinyAstral-4B",
+ "harness": "H* (final)",
+ "outcome": "success",
+ "recovered": false,
+ "caption": "5 tool calls; succeeded without a failed tool result.",
+ "call_limit": null,
+ "end_reason": "model_done",
+ "wall_seconds": 22.2,
+ "duration": 28.55,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000.jpg"
+  },
+  {
+   "t": 4.69,
+   "src": "frames/001.jpg"
+  },
+  {
+   "t": 13.69,
+   "src": "frames/002.jpg"
+  },
+  {
+   "t": 18.55,
+   "src": "frames/003.jpg"
+  },
+  {
+   "t": 22.05,
+   "src": "frames/004.jpg"
+  },
+  {
+   "t": 25.55,
+   "src": "frames/final.jpg",
+   "label": "final state"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 4.69,
+   "input": "Task: lift black bowl from cookie box and put it on plate\nGripper: tcp [0.452, 0.000, 0.273], opening 99%, holding: nothing (per last verified grasp).\nTime used: 0/450 s. Calls used: 0.",
+   "image": "frames/000.jpg",
+   "think": "The user wants me to lift the black bowl from the cookie box and put it on the plate. Looking at the image, I see a black bowl sitting on top of a dark box (which appears to be the \"cookie box\" or a drawer unit). There's also a plate on the table. I need to first locate the objects to get their positions.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"black bowl\", \"plate\", \"cookie box\"]}}",
+   "result": "{\"objects\": {\"black bowl\": {\"visible\": true, \"size\": [0.101, 0.094, 0.043], \"top_z\": 0.069, \"instances\": {\"black bowl #1\": {\"center\": [0.692, -0.264, 0.257], \"size\": [0.102, 0.094, 0.043]}, \"black bowl #2\": {\"center\": [0.738, 0.037, 0.047], \"size\": [0.101, 0.094, 0.043]}}, \"note\": \"2 instances seen (labelled in the image); refer to them as 'black bowl #1'..'black bowl #2'\"}, \"plate\": {\"visible\": true, \"center\": [0.727, 0.188, 0.009], \"size\": [0.112, 0.117, 0.017], \"top_z\": 0.017}, \"cookie box\": {\"visible\": false}}}",
+   "result_ok": true,
+   "wall_t_start": 0.9,
+   "wall_t_end": 1.7
+  },
+  {
+   "t_start": 4.69,
+   "t_end": 13.69,
+   "input": "Gripper: tcp [0.452, 0.000, 0.273], opening 99%, holding: nothing (per last verified grasp).\nTime used: 2/450 s. Calls used: 1.",
+   "image": "frames/001.jpg",
+   "think": "The task: lift black bowl from cookie box and put it on plate. There are two black bowls: #1 is on top of the dark cabinet (which is the \"cookie box\"? Actually the dark cabinet with drawers is on the left). #2 is the bowl sitting on a small red/yellow box (which could be the \"cookie box\").\n\nHmm, \"cookie box\" — the dark cabinet with drawers is likely the \"cookie box\" (a box with compartments). But the bowl #1 is on top of it. The bowl #2 is on a small red box.\n\nThe task says \"lift black bowl from cookie box and put it on plate\". The bowl on the cabinet (#1) is on top of the cabinet. The bowl #2 is on a small red box.\n\nWhich is the \"cookie box\"? The dark cabinet with drawers looks like a box with compartments — could be a \"cookie box\" (like a box with compartments for cookies). The red/yellow small box under bowl #2 could be a \"cookie box\" too.\n\nHmm. Let me inspect to be sure. Actually, the segmenter didn't find \"cookie box\". Let me try locating \"box\" or \"cabinet\".\n\nThe bowl #1 is at z=0.257 (on top of the cabinet). The bowl #2 is at z=0.047 (on the small red box).\n\n\"lift black bowl from cookie box\" — the bowl that is in/on the cookie box. If the cookie box is the dark cabinet, then bowl #1 is on it. If the cookie box is the small red box, then bowl #2 is on it.\n\nLet me inspect both to see labels. Actually inspect gives close-up views to read labels. Let me inspect \"black bowl #1\", \"black bowl #2\", \"plate\".\n\nActually, the dark cabinet with drawers — in these scenes, it's often called \"cabinet\" or \"box\". The red/yellow small box could be a \"carton\".\n\nLet me just inspect to se …",
+   "tool_call": "{\"name\": \"inspect\", \"arguments\": {\"objects\": [\"black bowl #1\", \"black bowl #2\", \"plate\"]}}",
+   "result": "{\"code\": \"OK\", \"note\": \"close-up views of the requested objects are attached to this turn's images (labelled)\"}",
+   "result_ok": true,
+   "wall_t_start": 6.8,
+   "wall_t_end": 7.3
+  },
+  {
+   "t_start": 13.69,
+   "t_end": 18.55,
+   "input": "(second image = close-ups)\nGripper: tcp [0.452, 0.000, 0.273], opening 99%, holding: nothing (per last verified grasp).\nTime used: 7/450 s. Calls used: 2.",
+   "image": "frames/002.jpg",
+   "think": "The task: lift black bowl from cookie box and put it on plate. The \"black bowl #2\" is sitting on a small box (the cookie box, red/white patterned). The \"black bowl #1\" is on top of the dark cabinet/drawer unit.\n\nSo the black bowl on the cookie box is #2. I need to grasp it and place it on the plate.\n\nGrasp black bowl #2 from top.",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"black bowl #2\", \"approach\": \"top\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 5.0, \"opening\": 0.103, \"rose_cm\": 4.9, \"object_motion_cm\": {\"black bowl\": 5.0, \"black bowl #2\": 5.0}}",
+   "result_ok": true,
+   "wall_t_start": 8.6,
+   "wall_t_end": 14.3
+  },
+  {
+   "t_start": 18.55,
+   "t_end": 22.05,
+   "input": "Gripper: tcp [0.687, 0.031, 0.104], opening 10%, holding: black bowl #2.\nTime used: 14/450 s. Calls used: 3.",
+   "image": "frames/003.jpg",
+   "think": "The bowl is held. Now place it on the plate.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"black bowl #2\", \"ref\": \"plate\", \"relation\": \"on\", \"gap_cm\": 1}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.13, \"object_motion_cm\": {\"plate\": 1.7, \"cookie box\": 0.8, \"black bowl #2\": 16.0}, \"gen_post_release\": {\"target\": [0.727, 0.188, 0.049], \"object_now\": [0.711, 0.184, 0.038], \"bottom_z\": 0.017, \"jump_cm\": 1.6, \"over_ref\": true, \"placed_offset_cm\": [-1.5, -0.4]}}",
+   "result_ok": true,
+   "wall_t_start": 15.0,
+   "wall_t_end": 21.6
+  },
+  {
+   "t_start": 22.05,
+   "t_end": 25.55,
+   "input": "Gripper: tcp [0.449, -0.001, 0.271], opening 100%, holding: nothing (per last verified grasp).\nTime used: 22/450 s. Calls used: 4.",
+   "image": "frames/004.jpg",
+   "think": "The bowl is placed on the plate. Verify.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"on\", \"black bowl #2\", \"plate\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"on\", \"black bowl #2\", \"plate\"], \"ok\": true, \"why\": \"black bowl #2 over plate: True; bottom 2 cm vs top 2 cm\"}]}",
+   "result_ok": true,
+   "wall_t_start": 22.1,
+   "wall_t_end": 22.2
+  }
+ ],
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "paper_ref": "Supp. Fig. B (S5)",
+ "playback_note": "One agent-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time."
+}

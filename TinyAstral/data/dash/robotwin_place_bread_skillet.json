@@ -1,0 +1,46 @@
+{
+ "duration": 54.63,
+ "chapters": [
+  {
+   "label": "1 \u00b7 grasp",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 carry",
+   "t": 7.31
+  },
+  {
+   "label": "3 \u00b7 grasp",
+   "t": 12.15
+  },
+  {
+   "label": "4 \u00b7 place",
+   "t": 17.16
+  },
+  {
+   "label": "5 \u00b7 home",
+   "t": 21.42
+  },
+  {
+   "label": "6 \u00b7 verify",
+   "t": 27.33
+  },
+  {
+   "label": "7 \u00b7 lift",
+   "t": 32.46
+  },
+  {
+   "label": "8 \u00b7 verify",
+   "t": 38.97
+  },
+  {
+   "label": "9 \u00b7 done",
+   "t": 44.48
+  },
+  {
+   "label": "Summary",
+   "t": 48.13
+  }
+ ],
+ "frames": 1639
+}

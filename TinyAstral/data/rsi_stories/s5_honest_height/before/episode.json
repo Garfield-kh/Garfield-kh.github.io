@@ -1,0 +1,123 @@
+{
+ "id": "s5_honest_height_before",
+ "title": "Before (H16): height check passes on the gripper pose; done is accepted",
+ "benchmark": "RoboTwin",
+ "split": "development (paired A/B)",
+ "instruction": "Grab the black and white plastic microphone and pass it to the other arm.",
+ "model": "Teacher (Qwen3.8-Flash)",
+ "harness": "H16",
+ "outcome": "failure",
+ "task": "handover_mic",
+ "seed": 69209,
+ "recovered": false,
+ "caption": "7 tool calls; task failed (simulator check at the end).",
+ "call_limit": 30,
+ "end_reason": "model_done",
+ "wall_seconds": 128.0,
+ "duration": 33.81,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000_head.jpg"
+  },
+  {
+   "t": 4.24,
+   "src": "frames/001_head.jpg"
+  },
+  {
+   "t": 10.32,
+   "src": "frames/002_head.jpg"
+  },
+  {
+   "t": 14.53,
+   "src": "frames/003_head.jpg"
+  },
+  {
+   "t": 18.03,
+   "src": "frames/004_head.jpg"
+  },
+  {
+   "t": 23.81,
+   "src": "frames/005_head.jpg"
+  },
+  {
+   "t": 27.31,
+   "src": "frames/006_head.jpg"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 4.24,
+   "input": "Task: Grab the black and white plastic microphone and pass it to the other arm.\nTask note (from earlier practice on this task):\n- Grasp with nearer arm; prefer part=\"handle\" if visible, because body-centre grasps often make carry UNREACHABLE. Try carry to x=0,y=-5 at 15-20 cm; if UNREACHABLE, lift 20-25 cm and move in small steps; lower on POSE_ERR.\n- Handover may go via table and drop the mic away. If EMPTY_GRASP/NOT_SEEN, locate and re-grasp with receiving arm; if it is UNREACHABLE, keep first arm holding and move the mic closer.\n- After handover, keep the microphone on the receiving arm's side (x<0 for the left arm, x>0 for the right arm) near y=-5, then lift until verify reports bottom 20-25 cm; if lift PLAN_FAIL, use small dz moves.\n- Before done, verify holding by receiving arm, released by first arm, xy near (0,-5), and bottom 20-25 cm. A closed gripper or height target 15/18 is not proof.\nObjects in the scene: bread, microphone\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 0/30.",
+   "image": "frames/000_head.jpg",
+   "think": "The microphone is on the right side of the image (x > 0), so I should use the right arm to grasp it. Let me first locate the microphone to confirm its position, then grasp it with the right arm using part=\"handle\" as suggested by the task note.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"microphone\"]}}",
+   "result": "{\"objects\": {\"microphone\": {\"visible\": true, \"center\": [17.2, -2.1, 1.8], \"size\": [1.8, 13.1, 3.5], \"top_z\": 3.5}}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 4.24,
+   "t_end": 10.32,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 1/30.",
+   "image": "frames/001_head.jpg",
+   "think": "Microphone is at x=17.2, right side. So right arm grasps it (nearer arm), then handover to left arm. Wait, but the note says after handover keep mic on receiving arm's side. If right grasps and hands over to left, left must hold it on left side. That's fine.\n\nActually, maybe simpler: right arm grasps, handover to left arm. Let's grasp with right arm, part=\"handle\".\n\nThe mic is lying on the table (size 1.8 x 13.1 x 3.5, top_z 3.5). The handle is the lower part. Let's just grasp with part=\"handle\".",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"arm\": \"right\", \"object\": \"microphone\", \"part\": \"handle\"}}",
+   "result": "{\"right\": {\"code\": \"OK\", \"grasp\": \"handle found by part segmentation\", \"grasp_point_cm\": [17.3, -4.5, 1.2], \"approach\": \"top-down\", \"finger_opening\": 0.208, \"lift_test\": \"object not visible; judged by finger opening\", \"attempts\": 1, \"held_check\": \"finger opening only: the cameras could not see microphone during the lift test (a small object is often hidden by the gripper), so that the held thing is microphone is not confirmed by the cameras\"}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 10.32,
+   "t_end": 14.53,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [17.2, -3.8, 8.4] cm, opening 25%, holding microphone.\nCalls used: 2/30.",
+   "image": "frames/002_head.jpg",
+   "think": "Right arm holds microphone. Now carry to middle x=0, y=-5 at height ~18 cm, then handover to left arm.\n\nActually handover(object, to_arm) puts it down between arms and the other arm grasps. Let's first carry to middle to make it reachable.",
+   "tool_call": "{\"name\": \"carry\", \"arguments\": {\"arm\": \"right\", \"object\": \"microphone\", \"ref\": \"table\", \"xy\": [0, -5], \"height_cm\": 18}}",
+   "result": "{\"right\": {\"code\": \"OK\", \"target\": \"table point\", \"target_cm\": [0.0, -5.0, 18.0], \"xy_corrections_cm\": []}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 14.53,
+   "t_end": 18.03,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-24.0, -25.0, 25.0] cm, opening 94%, holding nothing; right: gripper at [-6.0, -4.4, 23.6] cm, opening 25%, holding microphone.\nCalls used: 3/30.",
+   "image": "frames/003_head.jpg",
+   "think": "Right arm holds mic near middle at ~23.6 cm. Now handover to left arm.",
+   "tool_call": "{\"name\": \"handover\", \"arguments\": {\"object\": \"microphone\", \"to_arm\": \"left\"}}",
+   "result": "{\"code\": \"OK\", \"mode\": \"via the table\", \"put_down_at_cm\": [-4.0, -2.526172019368504], \"left\": {\"code\": \"OK\", \"grasp\": \"body centre across the narrow side\", \"grasp_point_cm\": [-9.4, 3.1, 1.7], \"approach\": \"top-down\", \"finger_opening\": 0.423, \"lift_test\": \"object not visible; judged by finger opening\", \"attempts\": 1, \"held_check\": \"finger opening only: the cameras could not see microphone during the lift test (a small object is often hidden by the gripper), so that the held thing is microphone is not confirmed by the cameras\"}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 18.03,
+   "t_end": 23.81,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-9.3, 3.5, 8.3] cm, opening 38%, holding microphone; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 4/30.",
+   "image": "frames/004_head.jpg",
+   "think": "Left arm holds microphone at (-9.3, 3.5). Need it on left side near y=-5, bottom 20-25 cm. Carry to table xy=[-6,-5] height 22, then lift.\n\nActually carry with ref table xy=[-6,-5] height_cm=22 would place it there held. Then verify.\n\nBut the note says keep on receiving arm's side near y=-5, lift until bottom 20-25 cm. Carry height 22 gives bottom ~22? carry height_cm is height above target (table) of the object presumably. Let's do carry to [-6,-5] at 22.",
+   "tool_call": "{\"name\": \"carry\", \"arguments\": {\"arm\": \"left\", \"object\": \"microphone\", \"ref\": \"table\", \"xy\": [-6, -5], \"height_cm\": 22}}",
+   "result": "{\"left\": {\"code\": \"OK\", \"target\": \"table point\", \"target_cm\": [-6.0, -5.0, 22.0], \"xy_corrections_cm\": [], \"turned_deg\": \"tilt -20.0\"}}",
+   "result_ok": true
+  },
+  {
+   "t_start": 23.81,
+   "t_end": 27.31,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-6.1, -4.9, 23.4] cm, opening 38%, holding microphone; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 5/30.",
+   "image": "frames/005_head.jpg",
+   "think": "Left arm holds microphone at (-6.1,-4.9,23.4). Right arm released (home). Verify.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"holding\", \"left\", \"microphone\"], [\"released\", \"right\"], [\"at\", \"microphone\", -6, -5, 6], [\"height\", \"microphone\", 20]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"holding\", \"left\", \"microphone\"], \"ok\": true, \"why\": \"left holds microphone; opening 38%\"}, {\"check\": [\"released\", \"right\"], \"ok\": true, \"why\": \"right gripper opening 94%\"}, {\"check\": [\"at\", \"microphone\", -6, -5, 6], \"ok\": true, \"why\": \"microphone centre [-6.7, -2.5], 2.6 cm from [-6, -5]\"}, {\"check\": [\"height\", \"microphone\", 20], \"ok\": true, \"why\": \"held by ['left']; bottom 21.8 cm above the table (from the gripper pose)\"}]}",
+   "result_ok": true
+  },
+  {
+   "t_start": 27.31,
+   "t_end": 30.81,
+   "input": "Task goal (from the note): Receiving arm holds the microphone on its own side near the front-middle, bottom 20-25 cm above table; first arm released.\nArms: left: gripper at [-6.1, -4.9, 23.4] cm, opening 38%, holding microphone; right: gripper at [24.0, -25.0, 25.0] cm, opening 94%, holding nothing.\nCalls used: 6/30.",
+   "image": "frames/006_head.jpg",
+   "think": "All checks pass: left holds microphone, right released, near (-6,-5), bottom 21.8 cm. Done.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"holding\", \"left\", \"microphone\"], [\"released\", \"right\"], [\"at\", \"microphone\", -6, -5, 6], [\"height\", \"microphone\", 20]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"holding\", \"left\", \"microphone\"], \"ok\": true, \"why\": \"left holds microphone; opening 38%\"}, {\"check\": [\"released\", \"right\"], \"ok\": true, \"why\": \"right gripper opening 94%\"}, {\"check\": [\"at\", \"microphone\", -6, -5, 6], \"ok\": true, \"why\": \"microphone centre [-6.7, -2.5], 2.6 cm from [-6, -5]\"}, {\"check\": [\"height\", \"microphone\", 20], \"ok\": true, \"why\": \"held by ['left']; bottom 21.8 cm above the table (from the gripper pose)\"}]}",
+   "result_ok": true
+  }
+ ],
+ "video_alt": "video.mp4",
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "playback_note": "One head-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time. video.mp4 is the same frame sequence on the same clock."
+}

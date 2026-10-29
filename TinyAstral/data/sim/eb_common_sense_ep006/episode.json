@@ -1,0 +1,140 @@
+{
+ "id": "eb_common_sense_ep006",
+ "title": "Re-describes the target by shape",
+ "benchmark": "EB-Manipulation",
+ "split": "zero-shot",
+ "instruction": "Pick up the object shaped like a rolling pin and place it into the lime green storage bin.",
+ "model": "TinyAstral-4B",
+ "harness": "H* (final)",
+ "outcome": "success",
+ "recovered": false,
+ "caption": "7 tool calls; succeeded without a failed tool result.",
+ "call_limit": null,
+ "end_reason": "model_done",
+ "wall_seconds": 187.1,
+ "duration": 35.42,
+ "frames": [
+  {
+   "t": 0.0,
+   "src": "frames/000.jpg"
+  },
+  {
+   "t": 5.37,
+   "src": "frames/001.jpg"
+  },
+  {
+   "t": 10.36,
+   "src": "frames/002.jpg"
+  },
+  {
+   "t": 15.34,
+   "src": "frames/003.jpg"
+  },
+  {
+   "t": 20.26,
+   "src": "frames/004.jpg"
+  },
+  {
+   "t": 23.76,
+   "src": "frames/005.jpg"
+  },
+  {
+   "t": 28.92,
+   "src": "frames/006.jpg"
+  },
+  {
+   "t": 32.42,
+   "src": "frames/final.jpg",
+   "label": "final state"
+  }
+ ],
+ "steps": [
+  {
+   "t_start": 0.0,
+   "t_end": 5.37,
+   "input": "Task: Pick up the object shaped like a rolling pin and place it into the lime green storage bin.",
+   "image": "frames/000.jpg",
+   "think": "The user wants me to pick up the object shaped like a rolling pin and place it into the lime green storage bin. Looking at the image, I see several objects: a blue star, a purple cylinder, a green tray/bin, a blue tray/bin, a black cylinder, and a white triangle. The \"rolling pin\" is likely the black cylinder in the middle of the table. Let me first locate all objects to understand the scene better.",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"rolling pin\", \"lime green storage bin\"]}}",
+   "result": "{\"objects\": {\"rolling pin\": {\"visible\": false}, \"lime green storage bin\": {\"visible\": true, \"center\": [0.275, -0.053, 0.036], \"size\": [0.223, 0.177, 0.049], \"top_z\": 0.061}}}",
+   "result_ok": true,
+   "wall_t_start": 1.6,
+   "wall_t_end": 9.1
+  },
+  {
+   "t_start": 5.37,
+   "t_end": 10.36,
+   "input": "",
+   "image": "frames/001.jpg",
+   "think": "The rolling pin isn't visible. Looking at the image, there's a black cylindrical object behind the green bin — that could be the rolling pin (a black cylinder/rolling pin). Let me try locating it as \"black cylinder\" or \"rolling pin\" again. The black object at the back of the green bin looks like a cylinder standing upright. Let me try \"cylinder\".",
+   "tool_call": "{\"name\": \"locate\", \"arguments\": {\"objects\": [\"cylinder\", \"black cylinder\"]}}",
+   "result": "{\"objects\": {\"cylinder\": {\"visible\": true, \"center\": [0.081, -0.017, 0.022], \"size\": [0.041, 0.043, 0.036], \"top_z\": 0.04}, \"black cylinder\": {\"visible\": true, \"center\": [0.081, -0.017, 0.023], \"size\": [0.041, 0.043, 0.035], \"top_z\": 0.04}}}",
+   "result_ok": true,
+   "wall_t_start": 10.5,
+   "wall_t_end": 18.1
+  },
+  {
+   "t_start": 10.36,
+   "t_end": 15.34,
+   "input": "",
+   "image": "frames/002.jpg",
+   "think": "The rolling pin is likely the black cylinder (a rolling pin is typically a black cylindrical object). The locate returned \"cylinder\" and \"black cylinder\" at the same position [0.081, -0.017, 0.022] — that's the black object behind the green bin. Let me grasp it.\n\nActually, the rolling pin could be the black cylinder. Let's grasp \"black cylinder\".",
+   "tool_call": "{\"name\": \"grasp\", \"arguments\": {\"object\": \"black cylinder\"}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 4.57, \"opening\": 0.56, \"rose_cm\": 4.7, \"object_motion_cm\": {\"cylinder\": 28.3, \"black cylinder\": 5.0}}",
+   "result_ok": true,
+   "wall_t_start": 19.9,
+   "wall_t_end": 103.7
+  },
+  {
+   "t_start": 15.34,
+   "t_end": 20.26,
+   "input": "",
+   "image": "frames/003.jpg",
+   "think": "The grasp succeeded, but the object_motion shows cylinder moved 28.3 cm — that's probably the segmentation confusion. Anyway, we're holding the black cylinder. Now lift and place into the lime green storage bin.\n\nWait — the \"rolling pin\" might be the black cylinder (like a rolling pin handle). Let's just place it in the bin.\n\nLift first.",
+   "tool_call": "{\"name\": \"lift\", \"arguments\": {\"height_cm\": 15}}",
+   "result": "{\"code\": \"OK\", \"tcp_z\": 0.152}",
+   "result_ok": true,
+   "wall_t_start": 105.5,
+   "wall_t_end": 108.2
+  },
+  {
+   "t_start": 20.26,
+   "t_end": 23.76,
+   "input": "",
+   "image": "frames/004.jpg",
+   "think": "The green bin is at [0.275, -0.053]. Place the held object into it.",
+   "tool_call": "{\"name\": \"place\", \"arguments\": {\"object\": \"black cylinder\", \"ref\": \"lime green storage bin\", \"relation\": \"in\", \"gap_cm\": 2}}",
+   "result": "{\"code\": \"OK\", \"ok\": true, \"pose_err_cm\": 0.26, \"object_motion_cm\": {\"rolling pin\": 38.9, \"cylinder\": 19.6, \"black cylinder\": 15.5}, \"gen_post_release\": {\"target\": [0.275, -0.053, 0.099], \"object_now\": [0.209, -0.045, 0.036], \"bottom_z\": 0.015, \"jump_cm\": 6.6, \"over_ref\": true, \"placed_offset_cm\": [-6.5, 0.8]}}",
+   "result_ok": true,
+   "wall_t_start": 110.2,
+   "wall_t_end": 172.2
+  },
+  {
+   "t_start": 23.76,
+   "t_end": 28.92,
+   "input": "",
+   "image": "frames/005.jpg",
+   "think": "The object was placed in the green bin. The image shows the black cylinder inside the green bin. Let me verify.\n\nNote: the \"rolling pin\" object name — the segmenter called it \"cylinder\"/\"black cylinder\". The placed object is in the bin. Let me verify with done checks.\n\nThe placed offset was -6.5 cm in x, but over_ref true and image shows it inside the bin. Let's verify.",
+   "tool_call": "{\"name\": \"verify\", \"arguments\": {\"checks\": [[\"in\", \"black cylinder\", \"lime green storage bin\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"in\", \"black cylinder\", \"lime green storage bin\"], \"ok\": true, \"why\": \"black cylinder centre 7 cm from lime green storage bin centre, bottom 1 cm vs rim 6 cm\"}]}",
+   "result_ok": true,
+   "wall_t_start": 174.3,
+   "wall_t_end": 180.1
+  },
+  {
+   "t_start": 28.92,
+   "t_end": 32.42,
+   "input": "",
+   "image": "frames/006.jpg",
+   "think": "The rolling pin (black cylinder) is now in the lime green storage bin. The image shows the black object inside the green bin. Task complete.",
+   "tool_call": "{\"name\": \"done\", \"arguments\": {\"checks\": [[\"in\", \"black cylinder\", \"lime green storage bin\"]]}}",
+   "result": "{\"all_pass\": true, \"checks\": [{\"check\": [\"in\", \"black cylinder\", \"lime green storage bin\"], \"ok\": true, \"why\": \"black cylinder centre 7 cm from lime green storage bin centre, bottom 1 cm vs rim 6 cm\"}]}",
+   "result_ok": true,
+   "wall_t_start": 181.4,
+   "wall_t_end": 187.1
+  }
+ ],
+ "source": "original evaluation log (local provenance record kept outside the site)",
+ "paper_ref": "Supp. Fig. A (S4)",
+ "playback_note": "One agent-camera frame per tool call (the image the model saw before that call). Playback time is paced for reading; it is not the robot's real time."
+}

@@ -1,0 +1,30 @@
+{
+ "duration": 39.02,
+ "chapters": [
+  {
+   "label": "1 \u00b7 grasp",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 lift",
+   "t": 6.85
+  },
+  {
+   "label": "3 \u00b7 done",
+   "t": 14.24
+  },
+  {
+   "label": "4 \u00b7 lift",
+   "t": 21.13
+  },
+  {
+   "label": "5 \u00b7 done",
+   "t": 27.06
+  },
+  {
+   "label": "Summary",
+   "t": 32.52
+  }
+ ],
+ "frames": 1171
+}

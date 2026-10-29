@@ -1,0 +1,38 @@
+{
+ "duration": 53.65,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 6.52
+  },
+  {
+   "label": "3 \u00b7 carry",
+   "t": 15.58
+  },
+  {
+   "label": "4 \u00b7 handover",
+   "t": 22.04
+  },
+  {
+   "label": "5 \u00b7 carry",
+   "t": 27.27
+  },
+  {
+   "label": "6 \u00b7 verify",
+   "t": 36.33
+  },
+  {
+   "label": "7 \u00b7 done",
+   "t": 41.68
+  },
+  {
+   "label": "Summary",
+   "t": 47.15
+  }
+ ],
+ "frames": 1610
+}

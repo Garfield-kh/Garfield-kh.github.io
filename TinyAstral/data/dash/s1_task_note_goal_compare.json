@@ -1,0 +1,26 @@
+{
+ "duration": 33.02,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 7.02
+  },
+  {
+   "label": "3 \u00b7 place (first divergence)",
+   "t": 12.61
+  },
+  {
+   "label": "4 \u00b7 done",
+   "t": 21.48
+  },
+  {
+   "label": "Summary",
+   "t": 26.52
+  }
+ ],
+ "frames": 991
+}

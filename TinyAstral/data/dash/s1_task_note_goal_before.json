@@ -1,0 +1,26 @@
+{
+ "duration": 32.7,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 7.8
+  },
+  {
+   "label": "3 \u00b7 place",
+   "t": 14.01
+  },
+  {
+   "label": "4 \u00b7 done",
+   "t": 21.64
+  },
+  {
+   "label": "Summary",
+   "t": 26.2
+  }
+ ],
+ "frames": 981
+}

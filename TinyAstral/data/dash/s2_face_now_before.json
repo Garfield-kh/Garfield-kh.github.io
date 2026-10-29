@@ -1,0 +1,38 @@
+{
+ "duration": 67.79,
+ "chapters": [
+  {
+   "label": "1 \u00b7 locate",
+   "t": 0.0
+  },
+  {
+   "label": "2 \u00b7 grasp",
+   "t": 6.71
+  },
+  {
+   "label": "3 \u00b7 handover",
+   "t": 15.77
+  },
+  {
+   "label": "4 \u00b7 home",
+   "t": 25.27
+  },
+  {
+   "label": "5 \u00b7 place",
+   "t": 34.33
+  },
+  {
+   "label": "6 \u00b7 verify",
+   "t": 43.39
+  },
+  {
+   "label": "7 \u00b7 done",
+   "t": 52.89
+  },
+  {
+   "label": "Summary",
+   "t": 61.29
+  }
+ ],
+ "frames": 2034
+}
