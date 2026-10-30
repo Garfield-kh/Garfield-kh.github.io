@@ -260,7 +260,9 @@
       ...(C.SHOW_BIBTEX === false ? [] : [["bibtex", "BibTeX", "#bibtex", false]]),
     ];
     $(sel).innerHTML = defs.map(([k, label, href, disabled], i) => {
-      const icon = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${LICON[k]}</svg>`;
+      const icon = k === "gitcode"
+        ? `<img class="btn-logo" src="assets/cann.png" alt="CANN" width="18" height="18">`
+        : `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${LICON[k]}</svg>`;
       if (disabled) return `<span class="btn btn-disabled" title="Coming soon">${icon}${label}<small>soon</small></span>`;
       return `<a class="btn${i === 0 ? " primary" : ""}" href="${esc(href)}"${/^https?:/.test(href) ? ' target="_blank" rel="noopener"' : ""}>${icon}${label}</a>`;
     }).join("");
