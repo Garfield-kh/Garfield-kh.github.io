@@ -255,7 +255,7 @@
       ["paper", "Paper", C.links.paper, C.ANON ? false : !live(C.links.paper)],
       ["arxiv", "arXiv", C.links.arxiv, !live(C.links.arxiv)],
       ["code", "Code", C.links.code, !live(C.links.code)],
-      ...(C.links.gitcode ? [["gitcode", "embodied-ai", C.links.gitcode, false]] : []),
+      ...(C.links.gitcode ? [["gitcode", "Embodied-AI", C.links.gitcode, false]] : []),
       ["weights", "Weights", C.links.weights, !live(C.links.weights)],
       ...(C.SHOW_BIBTEX === false ? [] : [["bibtex", "BibTeX", "#bibtex", false]]),
     ];
