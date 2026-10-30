@@ -110,7 +110,7 @@ code { font-family: var(--f-mono); font-size: .86em; background: var(--code-bg);
 
 /* ---------- nav ---------- */
 .topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; height: var(--nav-h);
-  background: color-mix(in srgb, var(--bg) 62%, transparent); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
   border-bottom: 1px solid var(--line); transition: background .3s; }
 .topnav.at-top { background: linear-gradient(rgba(4,8,14,.55), rgba(4,8,14,0)); border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
 .topnav-in { max-width: var(--wide); margin: 0 auto; padding: 0 16px; height: 100%; display: flex; align-items: center; gap: 14px; }
@@ -137,15 +137,14 @@ code { font-family: var(--f-mono); font-size: .86em; background: var(--code-bg);
   background: radial-gradient(900px 600px at 78% 30%, rgba(34,211,238,.10), transparent 70%), radial-gradient(800px 600px at 15% 85%, rgba(167,139,250,.08), transparent 70%), #060b13; }
 /* calm backdrop: only the front-camera footage of real_01 (x 60–557, y 55–385 of the 1280×720 frame), blurred and dimmed */
 .hero-cam { position: absolute; left: 50%; top: 50%; width: max(100cqw, calc(100cqh * 497 / 330)); aspect-ratio: 497 / 330; transform: translate(-50%, -50%) scale(1.08); overflow: hidden; opacity: .7; }
-.hero-cam video { position: absolute; left: -12.072%; top: -16.667%; width: 257.545%; height: 218.182%; max-width: none; object-fit: fill;
-  filter: blur(16px) brightness(.55) saturate(.7); }
+.hero-cam video { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }   /* pre-blurred clip; no CSS filter */
 .hero-shade { position: absolute; inset: 0;
   background: radial-gradient(1100px 650px at 22% 38%, rgba(6,11,19,.72), rgba(6,11,19,.35) 75%),
               linear-gradient(180deg, rgba(6,11,19,.55) 0%, rgba(6,11,19,.2) 40%, rgba(6,11,19,.72) 86%, var(--bg) 100%); }
 .hero-grid { position: absolute; inset: 0; opacity: .14; mask-image: linear-gradient(180deg, transparent, #000 30%, #000 60%, transparent);
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 60%, transparent);
   background-image: linear-gradient(rgba(34,211,238,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,.18) 1px, transparent 1px);
-  background-size: 56px 56px; animation: gridmove 24s linear infinite; }
+  background-size: 56px 56px; }   /* static: animating background-position repainted the whole hero every frame */
 @keyframes gridmove { to { background-position: 0 56px, 56px 0; } }
 .hero-in { position: relative; z-index: 1; width: 100%; max-width: var(--wide); margin: 0 auto; padding: calc(var(--nav-h) + 6vh) 16px 64px;
   display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
@@ -167,7 +166,7 @@ code { font-family: var(--f-mono); font-size: .86em; background: var(--code-bg);
 .aff-note { color: #7d8ea4; font-size: .82rem; margin-top: 2px; }
 .links { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; border-radius: 10px; font-weight: 500; font-size: .93rem;
-  color: #e8eef7; background: rgba(12, 22, 38, .6); border: 1px solid rgba(125,170,220,.35); backdrop-filter: blur(6px); transition: border-color .2s, box-shadow .2s, transform .2s; }
+  color: #e8eef7; background: rgba(12, 22, 38, .6); border: 1px solid rgba(125,170,220,.35); transition: border-color .2s, box-shadow .2s, transform .2s; }
 .btn:hover { text-decoration: none; border-color: var(--cyan); box-shadow: 0 0 0 1px rgba(34,211,238,.3), 0 0 22px rgba(34,211,238,.22); transform: translateY(-1px); }
 .btn.primary { background: linear-gradient(135deg, rgba(34,211,238,.25), rgba(167,139,250,.2)); border-color: rgba(34,211,238,.6); }
 .btn-disabled { color: #7d8ea4; border-style: dashed; cursor: default; }
@@ -177,8 +176,8 @@ code { font-family: var(--f-mono); font-size: .86em; background: var(--code-bg);
 .links-foot .btn-disabled { color: var(--faint); }
 
 .hero-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-.hstat { padding: 16px 16px 14px; border-radius: 12px; background: rgba(8, 15, 27, .62); border: 1px solid rgba(125,170,220,.2);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); position: relative; overflow: hidden;
+.hstat { padding: 16px 16px 14px; border-radius: 12px; background: rgba(8, 15, 27, .82); border: 1px solid rgba(125,170,220,.2);
+  position: relative; overflow: hidden;
   opacity: 0; transform: translateY(16px); transition: opacity .6s ease calc(var(--d) * .35s + .2s), transform .6s ease calc(var(--d) * .35s + .2s); }
 .hstat::before { content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 100%; background: linear-gradient(90deg, var(--cyan), transparent); opacity: .8; }
 .hero-stats.in .hstat { opacity: 1; transform: none; }
@@ -704,3 +703,6 @@ table.results th.bh { white-space: nowrap; }
 .btn .btn-logo { width: 18px; height: 18px; border-radius: 4px; display: block; flex: none; }
 
 .author-line .author-br { flex-basis: 100%; height: 0; }
+
+/* pause decorative animations while "How it works" is off screen */
+.how-stage.paused *, .how-stage.paused *::before, .how-stage.paused *::after { animation-play-state: paused !important; }

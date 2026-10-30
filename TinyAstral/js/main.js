@@ -155,7 +155,11 @@
       root.remove(); players.delete(api);
       if (opts.onMissing) opts.onMissing(); else container.appendChild(soonBox(e.title, "Coming soon"));
     });
-    if (srcs.length) v.src = srcs[0]; else { setTimeout(() => v.dispatchEvent(new Event("error")), 0); }
+    // attach the source only when the player comes near the viewport (keeps the initial page load light)
+    if (srcs.length) {
+      const lazy = new IntersectionObserver((en) => { if (en[0].isIntersecting) { lazy.disconnect(); if (!dead && !v.getAttribute("src")) v.src = srcs[0]; } }, { rootMargin: "600px 0px" });
+      lazy.observe(root);
+    } else { setTimeout(() => v.dispatchEvent(new Event("error")), 0); }
     // with opts.onEnded the section moves on to its next video; otherwise loop
     v.loop = !opts.onEnded;
     if (opts.onEnded) v.addEventListener("ended", () => { if (!dead) opts.onEnded(); });
@@ -288,12 +292,9 @@
   function heroVideo(entry) {
     const v = $("#hero-video");
     if (!entry) return;
-    if (entry.poster) v.poster = entry.poster;
+    v.poster = "assets/hero_bg.jpg";
     if (REDUCED) return;                       // static poster only
-    v.src = entry.lo || entry.hi;
-    const [a, b] = Array.isArray(entry.loop) ? entry.loop : [0, 0];
-    v.addEventListener("loadedmetadata", () => { v.playbackRate = 0.5; if (a) v.currentTime = a; }, { once: true });   // slowed: calm backdrop
-    if (b) v.addEventListener("timeupdate", () => { if (v.currentTime >= b) v.currentTime = a; });
+    v.src = "assets/hero_bg.mp4";   // front-camera crop of the first real-robot run, blurred, dimmed and slowed 2x offline (480 px, ~0.3 MB)
     v.addEventListener("error", () => v.removeAttribute("src"));
     new IntersectionObserver((en) => { if (en[0].isIntersecting) v.play().catch(() => {}); else v.pause(); }, { threshold: 0.05 }).observe($("#top"));
   }
@@ -319,12 +320,15 @@
     let timer = null, visible = false;
     const next = () => { clearTimeout(timer); if (!visible) return; timer = setTimeout(() => { set((cur + 1) % 3); next(); }, DUR[Math.max(0, cur)]); };
     set(0);
-    new IntersectionObserver((es) => { visible = es[0].isIntersecting; if (visible) next(); else clearTimeout(timer); }, { threshold: 0.3 }).observe(stage);
+    new IntersectionObserver((es) => {
+      visible = es[0].isIntersecting; stage.classList.toggle("paused", !visible);
+      if (visible) { next(); if (!raf) raf = requestAnimationFrame(tick); } else clearTimeout(timer);
+    }, { threshold: 0.05 }).observe(stage);
     [...panels, ...steps].forEach((el, i) => { el.style.cursor = "pointer"; el.addEventListener("click", () => { set(i % 3); next(); }); });
     // RSI loop: one clock drives both the orbiting dot and the node highlight, so a node is lit while the dot passes over it
     // (nodes clockwise from the top: Paired A/B, Accept, Read, Propose); harness version ticks up at "Accept"
     const orbit = $(".orbit", stage), LAP = 6000;
-    let lastIdx = -1, lap = 0, t0 = performance.now();
+    let lastIdx = -1, lap = 0, t0 = performance.now(), raf = 0;
     const tick = (now) => {
       if (!document.hidden) {
         const ph = ((now - t0) % LAP) / LAP;
@@ -336,9 +340,9 @@
           if (idx === 1) { lap = (lap + 1) % VER.length; hv.textContent = VER[lap]; }
         }
       }
-      requestAnimationFrame(tick);
+      raf = visible && !document.hidden ? requestAnimationFrame(tick) : 0;   // stops off screen; restarted by the observer
     };
-    requestAnimationFrame(tick);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden && visible && !raf) raf = requestAnimationFrame(tick); });
   }
 
   /* =================== ③ real robot =================== */
