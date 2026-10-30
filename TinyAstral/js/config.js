@@ -7,9 +7,21 @@ window.SITE_CONFIG = {
   venue_anon: "",
   venue_public: "",
 
-  // Public author list lives outside site/ (../public_authors.js.txt); paste it back here for the public version.
-  authors: [],
-  affiliations: { 1: "Huawei Technologies Co., Ltd", 2: "Huawei Noah Research Institute" },
+  // Public author list (from the arXiv branch of the paper). Only shown when ANON === false.
+  authors: [
+    { name: "Kehong Gong", aff: [1], url: "" },
+    { name: "Xiaoxu Zheng", aff: [1], url: "" },
+    { name: "Guanli Hou", aff: [2], url: "" },
+    { name: "Seunghun Lee", aff: [1], url: "" },
+    { name: "Mengqi Guo", aff: [1], url: "", br: true },   // line break after this name, as in the paper
+    { name: "Runjia Tan", aff: [3], url: "" },
+    { name: "Zhengyu Wen", aff: [2], url: "" },
+    { name: "Qi Wang", aff: [2], url: "" },
+    { name: "Xiaoyu He", aff: [2], url: "" },
+    { name: "Mingyuan Zhang", aff: [2], url: "", corresponding: true },
+    { name: "Michael Bi Mi", aff: [1], url: "" },
+  ],
+  affiliations: { 1: "Huawei Technologies Co., Ltd", 2: "Huawei Noah Research Institute", 3: "Independent Researcher" },
   SHOW_BIBTEX: false,   // until the arXiv version exists
 
   // Links. "#" = placeholder. In ANON mode, arXiv / Code / Weights are rendered as disabled "coming soon".

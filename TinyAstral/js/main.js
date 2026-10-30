@@ -234,9 +234,9 @@
       return;
     }
     const names = C.authors.map((a) => {
-      const sup = a.aff.join(",") + (a.corresponding ? "*" : "");
+      const sup = a.aff.join(",") + (a.corresponding ? ",*" : "");
       const n = a.url ? `<a href="${esc(a.url)}">${esc(a.name)}</a>` : esc(a.name);
-      return `<span class="author">${n}<sup>${sup}</sup></span>`;
+      return `<span class="author">${n}<sup>${sup}</sup></span>` + (a.br ? `<span class="author-br"></span>` : "");
     }).join("");
     const affs = Object.entries(C.affiliations).map(([k, v]) => `<span><sup>${k}</sup>${esc(v)}</span>`).join("");
     box.innerHTML = `<div class="author-line">${names}</div><div class="aff-line">${affs}</div><div class="aff-note"><sup>*</sup>Corresponding author</div>`;
