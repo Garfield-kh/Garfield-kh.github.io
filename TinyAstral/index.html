@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=10301532">
+<link rel="stylesheet" href="css/style.css?v=10301545">
 </head>
 <body>
 
@@ -98,10 +98,8 @@
 <section id="abstract" class="sec abstract-sec">
   <div class="wide">
     <div class="kicker">Abstract</div>
-    <p>Robot agents built on vision–language models depend on both the planner and its harness: the tools, feedback, memory, and recovery logic around it. Can improvements to a large teacher's harness be carried into a compact agent with lower inference compute cost?</p>
-    <p>We present <b>TinyAstral</b>, a two-stage approach. We first freeze an open-weight teacher and improve its harness through recursive self-improvement (RSI): frontier LLM agents read the teacher's trajectories and propose harness edits, and each edit is accepted only if it passes a paired statistical test. We then freeze the final harness, collect teacher trajectories with reasoning and failure recovery, and distill a small student that replaces the teacher in the same harness.</p>
-    <p>On RoboTwin, harness evolution raises the teacher's success from 33.4% to 63.6%; the final 4B student reaches 62.8%. Across four harness versions, distilled 4B students score close to their corresponding teachers, and later versions yield stronger students, showing that harness evolution gains carry into compact models. The harness gains also transfer to other frozen planners without retraining.</p>
-    <p>On identical episodes, the final 4B student outperforms open 4B agents, the open 27B harness-RSI model SenseNova-RoboRSI, and our own teacher model placed in three competitors' harnesses. It stays close to its teacher on all three training benchmarks, and on three benchmarks never used for RSI or training it scores close to a 552B planner running the same harness. On the measured deployment episodes, it uses about one fifth of its teacher's accelerator time. On a real SO-ARM101 arm, the 4B planner runs closed loop, served on Huawei Ascend Atlas A2.</p>
+    <p>Robot agents built on vision–language models depend on their <b>harness</b>: the tools, feedback, memory, and recovery logic around the planner. <b>TinyAstral</b> first freezes an open-weight ~180B teacher and improves only its harness through recursive self-improvement: frontier LLM agents propose edits, and each edit is kept only if it passes a paired statistical test. On RoboTwin this raises the teacher's success from 33.4% to 63.6%.</p>
+    <p>We then distill the teacher's trajectories, including reasoning and failure recovery, into a <b>4B student</b> that replaces it in the same harness. The student reaches 62.8%, stays close to its teacher on three training benchmarks and to a 552B planner on three unseen ones, uses about one fifth of the teacher's accelerator time, and runs closed loop on a real SO-ARM101 arm served on Huawei Ascend Atlas A2.</p>
   </div>
 </section>
 
@@ -350,8 +348,8 @@
   <div class="lb-body" id="lb-body"></div>
 </div>
 
-<script src="js/config.js?v=10301532"></script>
-<script src="js/player.js?v=10301532"></script>
-<script src="js/main.js?v=10301532"></script>
+<script src="js/config.js?v=10301545"></script>
+<script src="js/player.js?v=10301545"></script>
+<script src="js/main.js?v=10301545"></script>
 </body>
 </html>
