@@ -94,15 +94,6 @@
 
 <main>
 
-<!-- ABSTRACT (static text: readable without JavaScript, for readers and crawlers) -->
-<section id="abstract" class="sec abstract-sec">
-  <div class="wide">
-    <div class="kicker">Abstract</div>
-    <p>Robot agents built on vision–language models depend on their <b>harness</b>: the tools, feedback, memory, and recovery logic around the planner. <b>TinyAstral</b> first freezes an open-weight ~180B teacher and improves only its harness through recursive self-improvement: frontier LLM agents propose edits, and each edit is kept only if it passes a paired statistical test. On RoboTwin this raises the teacher's success from 33.4% to 63.6%.</p>
-    <p>We then distill the teacher's trajectories, including reasoning and failure recovery, into a <b>4B student</b> that replaces it in the same harness. The student reaches 62.8%, stays close to its teacher on three training benchmarks and to a 552B planner on three unseen ones, uses about one fifth of the teacher's accelerator time, and runs closed loop on a real SO-ARM101 arm served on Huawei Ascend Atlas A2.</p>
-  </div>
-</section>
-
 <!-- ② HOW IT WORKS -->
 <section id="how" class="how">
   <div class="how-track" id="how-track">
@@ -239,6 +230,15 @@
         <figcaption><b>Figure 2.</b> Overview. Stage 1 evolves the harness around a frozen ~180B teacher: frontier LLM agents propose edits, and an edit is kept only if a paired A/B test passes a pre-registered gate. Stage 2 freezes the final harness <i>H</i>*, collects teacher traces (including recovery) plus offline real-robot supervision, and trains 0.8B–4B students that replace the teacher in the same harness, evaluated on three training domains, three unseen benchmarks and three real-robot tasks.</figcaption>
       </figure>
     </details>
+  </div>
+</section>
+
+<!-- ABSTRACT (static text: readable without JavaScript, for readers and crawlers) -->
+<section id="abstract" class="sec abstract-sec">
+  <div class="wide">
+    <div class="kicker">Abstract</div>
+    <p>Robot agents built on vision–language models depend on their <b>harness</b>: the tools, feedback, memory, and recovery logic around the planner. <b>TinyAstral</b> first freezes an open-weight ~180B teacher and improves only its harness through recursive self-improvement: frontier LLM agents propose edits, and each edit is kept only if it passes a paired statistical test. On RoboTwin this raises the teacher's success from 33.4% to 63.6%.</p>
+    <p>We then distill the teacher's trajectories, including reasoning and failure recovery, into a <b>4B student</b> that replaces it in the same harness. The student reaches 62.8%, stays close to its teacher on three training benchmarks and to a 552B planner on three unseen ones, uses about one fifth of the teacher's accelerator time, and runs closed loop on a real SO-ARM101 arm served on Huawei Ascend Atlas A2.</p>
   </div>
 </section>
 
