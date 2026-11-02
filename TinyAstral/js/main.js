@@ -38,7 +38,7 @@
       if (on && on.scrollIntoView && window.innerWidth < 760) on.parentElement.scrollTo({ left: on.offsetLeft - 40, behavior: "smooth" });
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  ["how", "real", "rsi", "benchmarks", "results", "bibtex"].forEach((id) => { const el = document.getElementById(id); if (el) secIO.observe(el); });
+  ["video", "how", "real", "rsi", "benchmarks", "results", "bibtex"].forEach((id) => { const el = document.getElementById(id); if (el) secIO.observe(el); });
   $("#top") && new IntersectionObserver((e) => { if (e[0].isIntersecting) navLinks.forEach((a) => a.classList.remove("on")); }, { rootMargin: "-45% 0px -50% 0px" }).observe($("#top"));
 
   /* =================== scroll reveal (only ② and ④) =================== */
@@ -251,16 +251,19 @@
     code: '<path d="M8 6l-6 6 6 6M16 6l6 6-6 6" />',
     gitcode: '<path d="M6 3v12M18 9a3 3 0 1 0 0-.01M6 21a3 3 0 1 0 0-.01M18 12c0 4-6 3-12 6" />',
     weights: '<path d="M12 3v12M6 9l6 6 6-6M4 21h16" />',
+    data: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0" />',
     bibtex: '<path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h3" />',
   };
   const live = (u) => !!u && u !== "#";
   function renderLinks(sel) {
     const defs = [
-      ["paper", "Paper", C.links.paper, C.ANON ? false : !live(C.links.paper)],
+      // Public page: the arXiv button already links the paper, so Paper only shows in ANON mode.
+      ...(C.ANON ? [["paper", "Paper", C.links.paper, false]] : []),
       ["arxiv", "arXiv", C.links.arxiv, !live(C.links.arxiv)],
       ["code", "Code", C.links.code, !live(C.links.code)],
       ...(C.links.gitcode ? [["gitcode", "Embodied-AI", C.links.gitcode, false]] : []),
       ["weights", "Weights", C.links.weights, !live(C.links.weights)],
+      ["data", "Data", C.links.data, !live(C.links.data)],
       ...(C.SHOW_BIBTEX === false ? [] : [["bibtex", "BibTeX", "#bibtex", false]]),
     ];
     $(sel).innerHTML = defs.map(([k, label, href, disabled], i) => {

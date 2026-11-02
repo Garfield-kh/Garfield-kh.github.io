@@ -28,9 +28,10 @@ window.SITE_CONFIG = {
   links: {
     paper: "https://arxiv.org/pdf/2610.41216",
     arxiv: "https://arxiv.org/abs/2610.41216",
-    code: "#",
+    code: "https://github.com/Garfield-kh/TinyAstral",
     gitcode: "https://gitcode.com/cann/cann-recipes-embodied-ai",
-    weights: "#",
+    weights: "https://huggingface.co/kehong/TinyAstral-weights",
+    data: "https://huggingface.co/datasets/kehong/TinyAstral-SFT",
   },
 
   // Legacy real-robot slots (TAPlayer episode.json); used only if data/real/index.json is missing.
