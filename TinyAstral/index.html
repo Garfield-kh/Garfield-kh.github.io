@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=10301545">
+<link rel="stylesheet" href="css/style.css?v=11021805">
 </head>
 <body>
 
@@ -36,6 +36,7 @@
   <div class="topnav-in">
     <a class="brand" href="#top"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z" fill="currentColor"/></svg>TinyAstral</a>
     <div class="navlinks" id="navlinks">
+      <a href="#video" data-sec="video">Video</a>
       <a href="#how" data-sec="how">How it works</a>
       <a href="#real" data-sec="real">Real robot</a>
       <a href="#rsi" data-sec="rsi">RSI</a>
@@ -88,11 +89,30 @@
         <div class="hlbl">Runs the real-robot planner</div>
       </a>
     </div>
-    <a class="scroll-cue" href="#how" aria-label="Scroll to How it works"><span></span></a>
+    <a class="scroll-cue" href="#video" aria-label="Scroll to the overview video"><span></span></a>
   </div>
 </header>
 
 <main>
+
+<!-- VIDEO: 85-second overview -->
+<section id="video" class="sec video-sec">
+  <div class="wide sec-head">
+    <div class="kicker">Overview video</div>
+    <h2>TinyAstral in 85 seconds</h2>
+  </div>
+  <div class="wide">
+    <figure class="promo">
+      <div class="promo-frame">
+        <video id="promo-video" controls playsinline preload="metadata" poster="assets/tinyastral_promo_poster.jpg" width="1920" height="1080">
+          <source src="assets/tinyastral_promo_720.mp4?v=original-think-20261102" type="video/mp4" media="(max-width: 760px)">
+          <source src="assets/tinyastral_promo.mp4?v=original-think-20261102" type="video/mp4">
+        </video>
+      </div>
+      <figcaption class="promo-cap">Harness evolution, distillation into a 4B student, six benchmarks and the real arm, with sound.</figcaption>
+    </figure>
+  </div>
+</section>
 
 <!-- ② HOW IT WORKS -->
 <section id="how" class="how">
@@ -348,8 +368,8 @@
   <div class="lb-body" id="lb-body"></div>
 </div>
 
-<script src="js/config.js?v=11022120"></script>
+<script src="js/config.js?v=1102-data-link"></script>
 <script src="js/player.js?v=10301545"></script>
-<script src="js/main.js?v=11022120"></script>
+<script src="js/main.js?v=1102-data-link"></script>
 </body>
 </html>
