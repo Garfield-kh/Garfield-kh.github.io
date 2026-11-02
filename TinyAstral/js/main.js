@@ -836,7 +836,7 @@
     const author = C.ANON ? "Anonymous Authors" : C.authors.map((a) => { const p = a.name.split(" "); const last = p.pop(); return `${last}, ${p.join(" ")}`; }).join(" and ");
     const bib = C.ANON
       ? `@misc{tinyastral,\n  title  = {TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents},\n  author = {${author}}\n}`
-      : `@article{tinyastral2026,\n  title   = {TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents},\n  author  = {${author}},\n  journal = {arXiv preprint arXiv:XXXX.XXXXX},\n  year    = {2026}\n}`;
+      : "@article{gong2026tinyastral,\n  title         = {TinyAstral: Transferring Self-Evolving Harnesses to Tiny Generalist Manipulation Agents},\n  author        = {Gong, Kehong and Zheng, Xiaoxu and Hou, Guanli and Lee, Seunghun and Guo, Mengqi and Tan, Runjia and Wen, Zhengyu and Wang, Qi and He, Xiaoyu and Zhang, Mingyuan and Mi, Michael Bi},\n  journal       = {arXiv preprint arXiv:2610.41216},\n  year          = {2026},\n  eprint        = {2610.41216},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.RO},\n  url           = {https://arxiv.org/abs/2610.41216}\n}";
     $("#bibtex-code").textContent = bib;
     $("#bib-copy").addEventListener("click", async () => {
       try { await navigator.clipboard.writeText(bib); $("#bib-copy").textContent = "Copied"; }

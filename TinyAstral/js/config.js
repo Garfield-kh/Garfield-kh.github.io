@@ -22,12 +22,12 @@ window.SITE_CONFIG = {
     { name: "Michael Bi Mi", aff: [1], url: "" },
   ],
   affiliations: { 1: "Huawei Technologies Co., Ltd", 2: "Huawei Noah Research Institute", 3: "Independent Researcher" },
-  SHOW_BIBTEX: false,   // until the arXiv version exists
+  SHOW_BIBTEX: true,
 
   // Links. "#" = placeholder. In ANON mode, arXiv / Code / Weights are rendered as disabled "coming soon".
   links: {
-    paper: "#",
-    arxiv: "#",
+    paper: "https://arxiv.org/pdf/2610.41216",
+    arxiv: "https://arxiv.org/abs/2610.41216",
     code: "#",
     gitcode: "https://gitcode.com/cann/cann-recipes-embodied-ai",
     weights: "#",
